@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prosa Banana & Café</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+
+            --espresso: #2C1A0E;
+
+            --cafe-dark: #3F2A1E;
+
+            --gold: #D4A017;
+
+            --gold-light: #E8C070;
+
+            --cream: #F9F5F0;
+
+            --white: #FFFFFF;
+
+            --muted: #6B5C4F;
+
+            --border: #EDE4D9;
+
+            --red: #E85D5D;
+
+            --green: #22C55E;
+
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        
+
+        body {
+
+            font-family: 'Inter', system_ui, sans-serif;
+
+            background: var(--cream);
+
+            color: var(--espresso);
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+
+        }
+
+        .logo-img {
+
+            height: 52px;
+
+            width: auto;
+
+            object-fit: contain;
+
+        }
+
+        /* HEADER */
+
+        .header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background: rgba(249, 245, 240, 0.95);
+
+            backdrop-filter: blur(20px);
+
+            border-bottom: 1px solid var(--border);
+
+            padding: 0 5%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            height: 76px;
+
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 12px;
+
+            align-items: center;
+
+        }
+
+        .nav-links a {
+
+            color: var(--cafe-dark);
+
+            font-weight: 500;
+
+            padding: 10px 18px;
+
+            border-radius: 9999px;
+
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        }
+
+        .nav-links a:hover {
+
+            background: #f3e9d8;
+
+        }
+
+        .cart-toggle-btn {
+
+            background: var(--espresso);
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 24px;
+
+            border-radius: 9999px;
+
+            font-weight: 600;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+        }
+
+        .cart-toggle-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+        }
+
+        /* HERO */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            position: relative;
+
+        }
+
+        .hero-content {
+
+            padding: 0 8%;
+
+            z-index: 2;
+
+        }
+
+        .hero-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            background: #fff;
+
+            padding: 8px 20px;
+
+            border-radius: 9999px;
+
+            font-size: 0.9rem;
+
+            font-weight: 600;
+
+            color: var(--gold);
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+            margin-bottom: 24px;
+
+        }
+
+        .hero h1 {
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+
+            line-height: 1.1;
+
+            margin-bottom: 24px;
+
+            color: var(--espresso);
+
+        }
+
+        .hero p {
+
+            font-size: 1.2rem;
+
+            color: var(--muted);
+
+            max-width: 420px;
+
+            margin-bottom: 40px;
+
+        }
+
+        .btn-primary {
+
+            background: var(--gold);
+
+            color: white;
+
+            padding: 16px 36px;
+
+            border-radius: 9999px;
+
+            font-weight: 700;
+
+            font-size: 1.05rem;
+
+            border: none;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        }
+
+        .btn-primary:hover {
+
+            background: #b8860b;
+
+            transform: translateY(-4px);
+
+        }
+
+        .hero-image {
+
+            position: relative;
+
+            height: 100%;
+
+            overflow: hidden;
+
+        }
+
+        .hero-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+        .hero-image::after {
+
+            content: '';
+
+            position: absolute;
+
+            inset: 0;
+
+            background: linear-gradient(to left, transparent, var(--cream) 85%);
+
+        }
+
+        /* MENU SECTION */
+
+        .section {
+
+            padding: 100px 5%;
+
+        }
+
+        .menu-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            margin-bottom: 48px;
+
+            flex-wrap: wrap;
+
+            gap: 20px;
+
+        }
+
+        .menu-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+            gap: 28px;
+
+        }
+
+        .menu-card {
+
+            background: white;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 20px rgba(44, 26, 14, 0.08);
+
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+            cursor: pointer;
+
+        }
+
+        .menu-card:hover {
+
+            transform: translateY(-12px);
+
+            box-shadow: 0 20px 40px rgba(44, 26, 14, 0.15);
+
+        }
+
+        .menu-card img {
+
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+
+        }
+
+        .menu-card-content {
+
+            padding: 24px;
+
+        }
+
+        .menu-card-name {
+
+            font-size: 1.25rem;
+
+            font-weight: 700;
+
+            margin-bottom: 6px;
+
+        }
+
+        .menu-card-ingredients {
+
+            font-size: 0.95rem;
+
+            color: var(--muted);
+
+            margin-bottom: 12px;
+
+            line-height: 1.4;
+
+        }
+
+        .menu-card-nutrition {
+
+            font-size: 0.8rem;
+
+            color: #9c8a75;
+
+            margin-bottom: 20px;
+
+        }
+
+        .menu-card-footer {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+        .menu-price {
+
+            font-size: 1.35rem;
+
+            font-weight: 700;
+
+            color: var(--gold);
+
+        }
+
+        /* DRAWER */
+
+        .drawer-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(44, 26, 14, 0.6);
+
+            backdrop-filter: blur(8px);
+
+            z-index: 2000;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition: opacity 0.3s ease;
+
+        }
+
+        .drawer-overlay.open {
+
+            opacity: 1;
+
+            pointer-events: all;
+
+        }
+
+        .drawer {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            max-width: 460px;
+
+            height: 100vh;
+
+            background: white;
+
+            transform: translateX(-100%);
+
+            transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
+
+            z-index: 2100;
+
+            display: flex;
+
+            flex-direction: column;
+
+            box-shadow: 20px 0 40px rgba(0,0,0,0.15);
+
+            overflow-y: auto;
+
+        }
+
+        .drawer.open {
+
+            transform: translateX(0);
+
+        }
+
+        .drawer-header {
+
+            padding: 20px;
+
+            border-bottom: 1px solid var(--border);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+        .drawer-close {
+
+            width: 44px;
+
+            height: 44px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 1.5rem;
+
+            background: #f8f1e6;
+
+            border: none;
+
+        }
+
+        .drawer-image {
+
+            width: 100%;
+
+            height: 320px;
+
+            object-fit: cover;
+
+        }
+
+        .drawer-content {
+
+            padding: 32px;
+
+            flex: 1;
+
+        }
+
+        .drawer-name {
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: 2rem;
+
+            margin-bottom: 12px;
+
+        }
+
+        .drawer-price {
+
+            font-size: 1.5rem;
+
+            color: var(--gold);
+
+            font-weight: 700;
+
+            margin-bottom: 24px;
+
+        }
+
+        .drawer-section {
+
+            margin-bottom: 28px;
+
+        }
+
+        .drawer-section h4 {
+
+            font-size: 1rem;
+
+            font-weight: 600;
+
+            color: var(--muted);
+
+            margin-bottom: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+        }
+
+        /* Quantity */
+
+        .qty-group {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            background: #f8f1e6;
+
+            padding: 8px;
+
+            border-radius: 9999px;
+
+            width: fit-content;
+
+        }
+
+        .qty-btn {
+
+            width: 48px;
+
+            height: 48px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 9999px;
+
+            font-size: 1.4rem;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+        /* Add to cart */
+
+        .add-to-cart-btn {
+
+            width: 100%;
+
+            background: var(--espresso);
+
+            color: white;
+
+            border: none;
+
+            padding: 18px;
+
+            font-size: 1.1rem;
+
+            font-weight: 700;
+
+            border-radius: 9999px;
+
+            margin-top: 32px;
+
+            transition: all 0.3s;
+
+        }
+
+        .add-to-cart-btn:hover {
+
+            background: #1a1109;
+
+            transform: scale(1.02);
+
+        }
+
+        /* Cart */
+
+        .cart-sidebar {
+
+            position: fixed;
+
+            top: 0;
+
+            right: 0;
+
+            width: 420px;
+
+            max-width: 100%;
+
+            height: 100vh;
+
+            background: var(--cream);
+
+            transform: translateX(100%);
+
+            transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+
+            z-index: 2200;
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+        .cart-sidebar.open {
+
+            transform: translateX(0);
+
+        }
+
+        /* Toast */
+
+        .toast {
+
+            position: fixed;
+
+            bottom: 30px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background: var(--espresso);
+
+            color: white;
+
+            padding: 16px 28px;
+
+            border-radius: 9999px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+            z-index: 3000;
+
+            opacity: 0;
+
+            transition: all 0.4s;
+
+            white-space: nowrap;
+
+        }
+
+        .toast.show {
+
+            opacity: 1;
+
+            transform: translateX(-50%) translateY(-20px);
+
+        }
+
+        /* Responsive */
+
+        @media (max-width: 768px) {
+
+            .hero { grid-template-columns: 1fr; }
+
+            .hero-image { height: 420px; }
+
+            .menu-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+
+            .drawer { max-width: 100%; }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+
+            <img src="https://picsum.photos/id/1015/280/80" alt="Prosa Banana & Café" class="logo-img">
+
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="#cardapio">Cardápio</a>
+
+            <a href="#sobre">Sobre</a>
+
+        </nav>
+
+        <button class="cart-toggle-btn" onclick="toggleCart()">
+
+            🛒 <span id="cartBadge">0</span>
+
+        </button>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">☕ Artesanal • 🍌 Local</div>
+
+            <h1>O café que conta histórias</h1>
+
+            <p>Grãos especiais, doces frescos todos os dias e um ambiente que transforma cada visita em uma boa prosa.</p>
+
+            <button onclick="document.getElementById('cardapio').scrollIntoView({ behavior: 'smooth' })" class="btn-primary">
+
+                Ver Cardápio
+
+            </button>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1400&amp;q=85" alt="Café Prosa Banana">
+
+        </div>
+
+    </section>
+
+    <!-- TRENDING -->
+
+    <section class="section" style="background:white;">
+
+        <div class="menu-header">
+
+            <div>
+
+                <span style="color:var(--gold); font-weight:700; font-size:0.95rem;">🔥 EM ALTA</span>
+
+                <h2 style="font-family:'Playfair Display',serif; font-size:2.6rem; margin-top:8px;">Mais Pedidos</h2>
+
+            </div>
+
+        </div>
+
+        <div class="menu-grid" id="featuredGrid"></div>
+
+    </section>
+
+    <!-- FULL MENU -->
+
+    <section class="section" id="cardapio">
+
+        <div class="menu-header">
+
+            <div>
+
+                <span style="color:var(--gold); font-weight:700; font-size:0.95rem;">CARDÁPIO COMPLETO</span>
+
+                <h2 style="font-family:'Playfair Display',serif; font-size:2.8rem; margin-top:8px;">Escolha seu momento</h2>
+
+            </div>
+
+            <div style="position:relative; width:320px;">
+
+                <input type="text" id="searchInput" placeholder="Buscar itens..." 
+
+                       style="width:100%; padding:16px 24px 16px 52px; border:2px solid var(--border); border-radius:9999px; font-size:1rem;">
+
+                <span style="position:absolute; left:24px; top:50%; transform:translateY(-50%); color:#9c8a75;">🔍</span>
+
+            </div>
+
+        </div>
+
+        <div class="filters" id="filters" style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:48px;">
+
+            <!-- populated by JS -->
+
+        </div>
+
+        <div class="menu-grid" id="menuGrid"></div>
+
+        <!-- Bottom CTA -->
+
+        <div style="text-align:center; margin-top:80px;">
+
+            <button onclick="finalizarPedido()" 
+
+                    style="background:var(--green); color:white; padding:20px 60px; font-size:1.2rem; border-radius:9999px; border:none; font-weight:700; box-shadow:0 10px 30px rgba(34,197,94,0.3);">
+
+                Finalizar Pedido no WhatsApp →
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="section" id="sobre" style="background:#f9f5f0;">
+
+        <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+
+            <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=900&amp;q=85" 
+
+                 style="width:100%; border-radius:28px; box-shadow:0 30px 60px rgba(0,0,0,0.12);" alt="Interior">
+
+            <div>
+
+                <span style="color:var(--gold); font-weight:700;">NOSSA HISTÓRIA</span>
+
+                <h2 style="font-family:'Playfair Display',serif; font-size:3rem; line-height:1.1; margin:20px 0 32px;">Um lugar feito para boas conversas</h2>
+
+                <p style="font-size:1.15rem; color:var(--muted);">A Prosa Banana &amp; Café nasceu em Itaí com o desejo de oferecer mais que um café: uma experiência autêntica, com ingredientes frescos e muito carinho em cada detalhe.</p>
+
+                <div style="margin-top:40px; display:flex; gap:12px; flex-wrap:wrap;">
+
+                    <span style="background:white; padding:10px 22px; border-radius:9999px; font-size:0.9rem;">Grãos especiais</span>
+
+                    <span style="background:white; padding:10px 22px; border-radius:9999px; font-size:0.9rem;">Doces artesanais</span>
+
+                    <span style="background:white; padding:10px 22px; border-radius:9999px; font-size:0.9rem;">Itaí, SP</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DRAWER -->
+
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+    <div class="drawer" id="productDrawer">
+
+        <div class="drawer-header">
+
+            <button onclick="closeDrawer()" class="drawer-close">✕</button>
+
+        </div>
+
+        <img id="drawerImage" class="drawer-image" alt="">
+
+        <div class="drawer-content">
+
+            <h1 id="drawerName" class="drawer-name"></h1>
+
+            <div id="drawerPrice" class="drawer-price"></div>
+
+            
+
+            <div class="drawer-section">
+
+                <h4>Descrição</h4>
+
+                <p id="drawerDesc" style="color:#5c4735; line-height:1.7;"></p>
+
+            </div>
+
+            
+
+            <div class="drawer-section">
+
+                <h4>Ingredientes</h4>
+
+                <p id="drawerIngredients" style="color:var(--muted);"></p>
+
+            </div>
+
+            
+
+            <div class="drawer-section">
+
+                <h4>Informação Nutricional</h4>
+
+                <p id="drawerNutrition" style="color:#9c8a75; font-size:0.95rem;"></p>
+
+            </div>
+
+            <div style="margin-top:40px;">
+
+                <div style="display:flex; align-items:center; gap:16px; margin-bottom:32px;">
+
+                    <span style="font-weight:600;">Quantidade</span>
+
+                    <div class="qty-group">
+
+                        <button onclick="changeQty(-1)" class="qty-btn">−</button>
+
+                        <span id="drawerQty" style="font-size:1.4rem; font-weight:700; min-width:40px; text-align:center;">1</span>
+
+                        <button onclick="changeQty(1)" class="qty-btn">+</button>
+
+                    </div>
+
+                </div>
+
+                
+
+                <button onclick="addCurrentToCart()" class="add-to-cart-btn">
+
+                    Adicionar ao Carrinho
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CART SIDEBAR -->
+
+    <div class="drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div style="padding:28px 32px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+
+            <h2 style="font-family:'Playfair Display',serif; font-size:1.8rem;">Seu Pedido</h2>
+
+            <button onclick="toggleCart()" style="font-size:2rem; background:none; border:none;">✕</button>
+
+        </div>
+
+        
+
+        <div id="cartBody" style="flex:1; overflow-y:auto; padding:24px;"></div>
+
+        
+
+        <div style="padding:32px; border-top:1px solid var(--border); background:white;">
+
+            <input id="addressInput" type="text" placeholder="Endereço completo para entrega" 
+
+                   style="width:100%; padding:16px; border:2px solid var(--border); border-radius:16px; margin-bottom:16px;">
+
+            
+
+            <div style="display:flex; justify-content:space-between; margin:20px 0; font-size:1.1rem;">
+
+                <span>Total</span>
+
+                <span id="cartTotal" style="font-weight:700; color:var(--gold);">R$ 0,00</span>
+
+            </div>
+
+            
+
+            <button onclick="finalizarPedido()" 
+
+                    style="width:100%; background:var(--green); color:white; padding:18px; border-radius:9999px; font-weight:700; font-size:1.1rem;">
+
+                Enviar Pedido via WhatsApp
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- TOAST -->
+
+    <div id="toast" class="toast"></div>
+
+    <script>
+
+        // Extended product data
+
+        const PRODUTOS = [
+
+            {
+
+                id: 1, nome: "Espresso", preco: 8.90, cat: "cafe",
+
+                img: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=800",
+
+                desc: "Café puro extraído na hora com crema perfeita. Intensidade alta e sabor marcante.",
+
+                ingredients: "100% café arábica especial",
+
+                nutrition: "Calorias: 8 • Cafeína: 65mg"
+
+            },
+
+            {
+
+                id: 4, nome: "Cappuccino", preco: 14.90, cat: "cafe",
+
+                img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=800",
+
+                desc: "Espresso com leite vaporizado e espuma generosa. Clássico italiano perfeito.",
+
+                ingredients: "Café, leite integral, cacau em pó",
+
+                nutrition: "Calorias: 120 • Proteínas: 6g"
+
+            },
+
+            {
+
+                id: 6, nome: "Banana Latte", preco: 16.90, cat: "cafe",
+
+                img: "https://images.unsplash.com/photo-1585494156145-1c60a4fe952b?w=800",
+
+                desc: "Nosso signature drink. Espresso com leite, banana madura e toque de canela.",
+
+                ingredients: "Café, leite, banana, canela, mel",
+
+                nutrition: "Calorias: 210 • Carboidratos: 28g"
+
+            },
+
+            {
+
+                id: 12, nome: "Frappuccino Banana", preco: 19.90, cat: "gelado",
+
+                img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800",
+
+                desc: "Refrescante e cremoso, perfeito para dias quentes.",
+
+                ingredients: "Banana, café, leite, gelo, chantilly",
+
+                nutrition: "Calorias: 320"
+
+            },
+
+            // Add more with similar structure as needed...
+
+            { id: 21, nome: "Cheesecake Morango", preco: 18.90, cat: "doce", img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800", desc: "Base crocante com recheio cremoso e morangos frescos.", ingredients: "Cream cheese, morango, biscoito, açúcar", nutrition: "Calorias: 380" },
+
+            { id: 25, nome: "Banoffee", preco: 19.90, cat: "doce", img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800", desc: "Torta clássica inglesa com banana, doce de leite e chantilly.", ingredients: "Banana, doce de leite, biscoito, creme", nutrition: "Calorias: 420" },
+
+        ];
+
+        let carrinho = JSON.parse(localStorage.getItem("pb_cart") || "[]");
+
+        let currentProduct = null;
+
+        let currentQty = 1;
+
+        function renderFeatured() {
+
+            const container = document.getElementById("featuredGrid");
+
+            const featured = PRODUTOS.slice(0, 4);
+
+            
+
+            container.innerHTML = featured.map(p => `
+
+                <div class="menu-card" onclick="openProduct(${p.id})">
+
+                    <img src="${p.img}" alt="${p.nome}">
+
+                    <div class="menu-card-content">
+
+                        <div class="menu-card-name">${p.nome}</div>
+
+                        <div class="menu-card-ingredients">${p.ingredients.substring(0, 60)}...</div>
+
+                        <div class="menu-card-nutrition">${p.nutrition}</div>
+
+                        <div class="menu-card-footer">
+
+                            <span class="menu-price">R$ ${p.preco.toFixed(2).replace('.', ',')}</span>
+
+                            <button onclick="event.stopImmediatePropagation(); addToCart(${p.id});" style="background:var(--espresso); color:white; width:42px; height:42px; border-radius:50%; font-size:1.4rem;">+</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `).join('');
+
+        }
+
+        function renderMenu(filteredProducts = PRODUTOS) {
+
+            const container = document.getElementById("menuGrid");
+
+            container.innerHTML = filteredProducts.map(p => `
+
+                <div class="menu-card" onclick="openProduct(${p.id})">
+
+                    <img src="${p.img}" alt="${p.nome}">
+
+                    <div class="menu-card-content">
+
+                        <div class="menu-card-name">${p.nome}</div>
+
+                        <div class="menu-card-ingredients">${p.ingredients}</div>
+
+                        <div class="menu-card-nutrition">${p.nutrition}</div>
+
+                        <div class="menu-card-footer">
+
+                            <span class="menu-price">R$ ${p.preco.toFixed(2).replace('.', ',')}</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `).join('');
+
+        }
+
+        function openProduct(id) {
+
+            currentProduct = PRODUTOS.find(p => p.id === id);
+
+            if (!currentProduct) return;
+
+            
+
+            currentQty = 1;
+
+            
+
+            document.getElementById("drawerImage").src = currentProduct.img;
+
+            document.getElementById("drawerName").textContent = currentProduct.nome;
+
+            document.getElementById("drawerPrice").textContent = `R$ ${currentProduct.preco.toFixed(2).replace('.', ',')}`;
+
+            document.getElementById("drawerDesc").textContent = currentProduct.desc;
+
+            document.getElementById("drawerIngredients").textContent = currentProduct.ingredients;
+
+            document.getElementById("drawerNutrition").textContent = currentProduct.nutrition;
+
+            document.getElementById("drawerQty").textContent = currentQty;
+
+            
+
+            document.getElementById("drawerOverlay").classList.add("open");
+
+            document.getElementById("productDrawer").classList.add("open");
+
+        }
+
+        function closeDrawer() {
+
+            document.getElementById("drawerOverlay").classList.remove("open");
+
+            document.getElementById("productDrawer").classList.remove("open");
+
+        }
+
+        function changeQty(delta) {
+
+            currentQty = Math.max(1, currentQty + delta);
+
+            document.getElementById("drawerQty").textContent = currentQty;
+
+        }
+
+        function addCurrentToCart() {
+
+            if (!currentProduct) return;
+
+            for (let i = 0; i < currentQty; i++) {
+
+                addToCart(currentProduct.id);
+
+            }
+
+            showToast(`${currentQty} × ${currentProduct.nome} adicionado(s)!`);
+
+            closeDrawer();
+
+        }
+
+        function addToCart(id) {
+
+            const prod = PRODUTOS.find(p => p.id === id);
+
+            const existing = carrinho.find(item => item.id === id);
+
+            
+
+            if (existing) {
+
+                existing.qtd = (existing.qtd || 1) + 1;
+
+            } else {
+
+                carrinho.push({ ...prod, qtd: 1 });
+
+            }
+
+            
+
+            saveCart();
+
+            showToast(`☕ ${prod.nome} adicionado`);
+
+        }
+
+        function saveCart() {
+
+            localStorage.setItem("pb_cart", JSON.stringify(carrinho));
+
+            renderCart();
+
+        }
+
+        function renderCart() {
+
+            const body = document.getElementById("cartBody");
+
+            const totalEl = document.getElementById("cartTotal");
+
+            const badge = document.getElementById("cartBadge");
+
+            let total = 0;
+
+            let count = 0;
+
+            if (carrinho.length === 0) {
+
+                body.innerHTML = `<div style="text-align:center; padding:60px 20px; color:#9c8a75;">Seu carrinho está vazio</div>`;
+
+                totalEl.textContent = "R$ 0,00";
+
+                badge.textContent = "0";
+
+                return;
+
+            }
+
+            let html = '';
+
+            carrinho.forEach(item => {
+
+                const itemTotal = item.preco * item.qtd;
+
+                total += itemTotal;
+
+                count += item.qtd;
+
+                
+
+                html += `
+
+                    <div style="display:flex; gap:16px; background:white; padding:16px; border-radius:20px; margin-bottom:16px;">
+
+                        <img src="${item.img}" style="width:70px; height:70px; object-fit:cover; border-radius:12px;">
+
+                        <div style="flex:1;">
+
+                            <div style="font-weight:600;">${item.nome}</div>
+
+                            <div style="color:var(--gold); font-size:1.05rem;">R$ ${itemTotal.toFixed(2).replace('.', ',')}</div>
+
+                            <div style="margin-top:12px; display:flex; align-items:center; gap:12px;">
+
+                                <button onclick="updateCartQty(${item.id}, -1)" style="width:32px;height:32px;border:1px solid #ddd;border-radius:50%;">−</button>
+
+                                <span>${item.qtd}</span>
+
+                                <button onclick="updateCartQty(${item.id}, 1)" style="width:32px;height:32px;border:1px solid #ddd;border-radius:50%;">+</button>
+
+                            </div>
+
+                        </div>
+
+                        <button onclick="removeFromCart(${item.id})" style="color:#e85d5d; background:none; border:none; font-size:1.4rem;">✕</button>
+
+                    </div>
+
+                `;
+
+            });
+
+            body.innerHTML = html;
+
+            totalEl.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+            badge.textContent = count;
+
+        }
+
+        function updateCartQty(id, delta) {
+
+            const item = carrinho.find(i => i.id === id);
+
+            if (item) {
+
+                item.qtd += delta;
+
+                if (item.qtd < 1) removeFromCart(id);
+
+                else saveCart();
+
+            }
+
+        }
+
+        function removeFromCart(id) {
+
+            carrinho = carrinho.filter(i => i.id !== id);
+
+            saveCart();
+
+        }
+
+        function toggleCart() {
+
+            const sidebar = document.getElementById("cartSidebar");
+
+            const overlay = document.getElementById("cartOverlay");
+
+            sidebar.classList.toggle("open");
+
+            overlay.classList.toggle("open");
+
+        }
+
+        function finalizarPedido() {
+
+            if (!carrinho.length) {
+
+                showToast("Carrinho vazio");
+
+                return;
+
+            }
+
+            const addr = document.getElementById("addressInput").value.trim() || "Retirada na loja";
+
+            const total = carrinho.reduce((sum, i) => sum + i.preco * i.qtd, 0);
+
+            
+
+            let msg = `Olá! Gostaria de pedir:%0A`;
+
+            carrinho.forEach(item => {
+
+                msg += `- ${item.nome} ×${item.qtd}%0A`;
+
+            });
+
+            msg += `%0ATotal: R$ ${total.toFixed(2)}%0AEndereço: ${encodeURIComponent(addr)}`;
+
+            
+
+            window.open(`https://wa.me/5515999999999?text=${msg}`, "_blank");
+
+        }
+
+        function showToast(message) {
+
+            const toast = document.getElementById("toast");
+
+            toast.textContent = message;
+
+            toast.classList.add("show");
+
+            setTimeout(() => toast.classList.remove("show"), 2800);
+
+        }
+
+        // Initialize filters
+
+        function initFilters() {
+
+            const cats = ["todos", "cafe", "gelado", "doce"];
+
+            const labels = {todos: "Todos", cafe: "Cafés", gelado: "Gelados", doce: "Doces"};
+
+            
+
+            let html = '';
+
+            cats.forEach(cat => {
+
+                html += `<button onclick="filterCategory('${cat}')" class="filter-btn ${cat==='todos'?'active':''}" style="padding:10px 28px; border-radius:9999px; border:2px solid #e8d9c0; background:white;">${labels[cat]}</button>`;
+
+            });
+
+            document.getElementById("filters").innerHTML = html;
+
+        }
+
+        let activeFilter = "todos";
+
+        function filterCategory(cat) {
+
+            activeFilter = cat;
+
+            document.querySelectorAll(".filter-btn").forEach(btn => {
+
+                btn.classList.toggle("active", btn.textContent === (cat === "todos" ? "Todos" : (cat === "cafe" ? "Cafés" : cat === "gelado" ? "Gelados" : "Doces")));
+
+            });
+
+            
+
+            const filtered = cat === "todos" ? PRODUTOS : PRODUTOS.filter(p => p.cat === cat);
+
+            renderMenu(filtered);
+
+        }
+
+        // Search
+
+        document.getElementById("searchInput").addEventListener("input", (e) => {
+
+            const term = e.target.value.toLowerCase();
+
+            const filtered = PRODUTOS.filter(p => 
+
+                p.nome.toLowerCase().includes(term) || 
+
+                (p.ingredients && p.ingredients.toLowerCase().includes(term))
+
+            );
+
+            renderMenu(filtered);
+
+        });
+
+        // Init
+
+        window.onload = function() {
+
+            renderFeatured();
+
+            renderMenu();
+
+            initFilters();
+
+            renderCart();
+
+        };
+
+    </script>
+
+</body>
+
+</html>
