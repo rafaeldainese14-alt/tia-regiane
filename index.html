@@ -595,8 +595,10 @@ function finalizarPedido() {
     return;
   }
   const itens = carrinho.map(p => `• ${p.qtd} × ${p.nome}`).join("\n");
-  const msg = `Hello Regiane! 👋\n\nI would like to place the following order:\n\n${itens}\n\nDelivery address:\n${addr}\n\nThank you!`;
-  window.open(`https://wa.me/5515999999999?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+   const msg =
+    `Olá Regiane,%0A%0AEu gostaria de encomendar: ${encodeURIComponent(itensTxt)}.%0A%0AMeu endereço é: ${encodeURIComponent(addr)}.%0A%0A💰 *Total: ${totalFmt}*`;
+
+  window.open(`https://wa.me/5515999999999?text=${msg}`, "_blank");
 }
 function scrollToLoja() { document.querySelector("#loja").scrollIntoView({behavior:"smooth", block:"center"}); }
 let toastTimer;
