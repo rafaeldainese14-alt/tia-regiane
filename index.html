@@ -129,14 +129,14 @@ h1 span{color:var(--caramel)}
 .footer-links a:hover{color:var(--caramel-2)}
 .overlay{position:fixed;inset:0;background:rgba(44,26,14,.52);backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:opacity var(--ease);z-index:950}
 .overlay.open{opacity:1;pointer-events:auto}
-.drawer,.cart{position:fixed;top:0;height:100dvh;background:var(--cream);z-index:1000;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .36s cubic-bezier(.2,.8,.2,1);overflow:hidden}
-.drawer{left:0;width:min(460px,100vw);transform:translateX(-105%)}
+.drawer,.cart{position:fixed;top:0;height:100dvh;background:var(--cream);z-index:1000;display:block;box-shadow:var(--shadow);transition:transform .36s cubic-bezier(.2,.8,.2,1);overflow-y:auto;overflow-x:hidden}
+.drawer{right:0;width:min(460px,100vw);transform:translateX(105%)}
 .cart{right:0;width:min(430px,100vw);transform:translateX(105%)}
 .drawer.open,.cart.open{transform:translateX(0)}
 .drawer-hero{height:300px;position:relative;overflow:hidden;background:var(--cream-2)}
 .drawer-hero img{width:100%;height:100%;object-fit:cover}
 .close{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:var(--shadow-soft);font-size:1.1rem;display:grid;place-items:center}
-.drawer-content{padding:22px;overflow:auto;flex:1}
+.drawer-content{padding:22px;overflow:visible}
 .cat-chip{display:inline-flex;background:#f9efe0;color:#9a6a1f;padding:6px 11px;border-radius:var(--pill);font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
 .drawer-title{font-family:"Playfair Display",serif;font-size:2rem;line-height:1.05;margin-bottom:8px}
 .drawer-price{font-family:"Playfair Display",serif;font-size:1.55rem;color:var(--caramel);font-weight:900;margin-bottom:16px}
@@ -158,7 +158,7 @@ h1 span{color:var(--caramel)}
 .cart-header{padding:20px 22px;border-bottom:1px solid var(--line);background:#fff;display:flex;justify-content:space-between;align-items:center}
 .cart-title{font-family:"Playfair Display",serif;font-size:1.35rem;font-weight:900}
 .cart-close{width:40px;height:40px;border-radius:50%;background:var(--cream);border:1px solid var(--line);font-size:1.05rem}
-.cart-body{flex:1;overflow:auto;padding:18px 20px}
+.cart-body{overflow:visible;padding:18px 20px}
 .cart-empty{text-align:center;color:var(--muted);font-weight:700;padding:60px 14px}
 .cart-empty div{font-size:3rem;margin-bottom:10px;opacity:.55}
 .cart-item{display:grid;grid-template-columns:58px 1fr auto auto;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px;margin-bottom:10px;box-shadow:0 6px 18px rgba(44,26,14,.04)}
@@ -189,7 +189,7 @@ h1 span{color:var(--caramel)}
 .toast{position:fixed;right:22px;bottom:88px;z-index:1400;background:var(--espresso);color:#fff;border-radius:var(--pill);padding:12px 18px;font-weight:900;box-shadow:var(--shadow-soft);opacity:0;transform:translateY(10px);pointer-events:none;transition:var(--ease)}
 .toast.show{opacity:1;transform:translateY(0)}
 @media(max-width:1100px){.featured-grid,.menu-grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr}.hero-card img{height:420px}.about{grid-template-columns:1fr}}
-@media(max-width:760px){body{padding-bottom:88px}.brand-copy{display:none}.nav{display:none}.mobile-menu-btn{display:inline-flex}.header{height:76px}:root{--header:76px}.logo{width:76px;height:76px}.cart-btn span.label{display:none}.hero{padding:24px 16px 42px;gap:22px}.hero-actions .btn-primary,.hero-actions .btn-secondary{width:100%}.hero-card{border-radius:28px}.hero-card img{height:320px}.hero-floating{position:static;margin-top:-24px;margin-left:12px;margin-right:12px;max-width:none}.stats{grid-template-columns:repeat(2,1fr);margin:0 16px;border-radius:24px}.stat{padding:18px 12px}.section{padding:56px 16px}.section-head{display:block}.section-head p{margin-top:10px}.featured-grid,.menu-grid{grid-template-columns:repeat(2,1fr);gap:12px}.card{border-radius:20px}.card-body{padding:12px}.card-title{font-size:.92rem}.ingredients{font-size:.73rem}.nutrition{font-size:.66rem}.controls{grid-template-columns:1fr}.cta-band{display:block;padding:24px}.cta-band .btn-{margin-top:16px;width:100%}.about-media img{height:300px}.nutri-grid{grid-template-columns:repeat(2,1fr)}.fab{display:none}.mobile-cart-bar{display:flex}.toast{left:16px;right:16px;bottom:100px;text-align:center}}
+@media(max-width:760px){.drawer,.cart{width:100vw}.drawer-content,.cart-body{padding:20px 18px}.drawer-footer,.cart-footer{padding:18px 18px calc(18px + env(safe-area-inset-bottom))}.cart-header{padding:20px 18px}.drawer-hero{height:300px}body{padding-bottom:88px}.brand-copy{display:none}.nav{display:none}.mobile-menu-btn{display:inline-flex}.header{height:76px}:root{--header:76px}.logo{width:76px;height:76px}.cart-btn span.label{display:none}.hero{padding:24px 16px 42px;gap:22px}.hero-actions .btn-primary,.hero-actions .btn-secondary{width:100%}.hero-card{border-radius:28px}.hero-card img{height:320px}.hero-floating{position:static;margin-top:-24px;margin-left:12px;margin-right:12px;max-width:none}.stats{grid-template-columns:repeat(2,1fr);margin:0 16px;border-radius:24px}.stat{padding:18px 12px}.section{padding:56px 16px}.section-head{display:block}.section-head p{margin-top:10px}.featured-grid,.menu-grid{grid-template-columns:repeat(2,1fr);gap:12px}.card{border-radius:20px}.card-body{padding:12px}.card-title{font-size:.92rem}.ingredients{font-size:.73rem}.nutrition{font-size:.66rem}.controls{grid-template-columns:1fr}.cta-band{display:block;padding:24px}.cta-band .btn-{margin-top:16px;width:100%}.about-media img{height:300px}.nutri-grid{grid-template-columns:repeat(2,1fr)}.fab{display:none}.mobile-cart-bar{display:flex}.toast{left:16px;right:16px;bottom:100px;text-align:center}}
 @media(max-width:420px){.featured-grid,.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card-img-wrap{aspect-ratio:1/1}.quick-add{width:38px;height:38px}.price{font-size:1rem}.cart-item{grid-template-columns:52px 1fr auto;position:relative}.cart-item .remove{position:absolute;right:8px;top:8px}.cart-item h4{max-width:160px}}
 @media(max-width:340px){.featured-grid,.menu-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
@@ -207,6 +207,12 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opa
 .cta-band{background:linear-gradient(135deg,#2C1A0E,#4A3020 52%,#7B522E);border:1px solid rgba(232,176,96,.18)}.cta-band h3{text-wrap:balance}.about-copy h2{text-wrap:balance}.about-media::after{content:"Interior de São Paulo • café passado • doce de casa";position:absolute;left:18px;right:18px;bottom:18px;background:rgba(44,26,14,.76);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:10px 14px;text-align:center;font-weight:900;font-size:.78rem;letter-spacing:.03em;backdrop-filter:blur(8px)}
 .signature{margin-top:18px;padding:18px;border-left:4px solid var(--caramel);background:rgba(255,255,255,.68);border-radius:0 18px 18px 0;color:var(--coffee);font-weight:800}.footer{background:radial-gradient(circle at 20% 0,rgba(200,146,58,.18),transparent 34%),var(--espresso)}
 @media(max-width:760px){.hero::before{top:16px;right:-28px;font-size:7rem}.hero-card{transform:none}.story-strip{grid-template-columns:1fr}.about-media::after{font-size:.7rem;border-radius:18px}.header{padding-inline:12px}.logo{width:82px;height:82px}.cart-btn{padding:10px 13px}}
+
+
+/* ===== Novos recursos de e-commerce ===== */
+.promo-banner{margin:18px clamp(16px,5vw,72px) 0;background:linear-gradient(135deg,var(--espresso),#5f3d25 58%,var(--caramel));color:#fff;border-radius:26px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:var(--shadow-soft);overflow:hidden;position:relative;animation:promoIn .7s ease both}.promo-banner::before{content:"";position:absolute;right:-50px;top:-70px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.14)}.promo-banner strong{font-family:"Playfair Display",serif;font-size:clamp(1.15rem,2.2vw,1.75rem);position:relative}.promo-banner span{color:rgba(255,255,255,.78);font-weight:800;position:relative}.promo-banner .promo-pill{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 12px;font-size:.82rem;white-space:nowrap}@keyframes promoIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+.rating-row{display:flex;align-items:center;gap:7px;color:var(--caramel);font-size:.78rem;font-weight:900}.rating-row span:last-child{color:var(--muted);font-weight:800}.option-group{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;margin:14px 0}.option-title{display:flex;justify-content:space-between;gap:12px;font-size:.82rem;font-weight:900;color:var(--espresso);margin-bottom:10px}.required-mark{color:var(--danger);font-size:.72rem}.choice-list{display:grid;gap:8px}.choice{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);background:var(--cream);border-radius:14px;padding:10px 12px;font-weight:800;color:var(--coffee);cursor:pointer}.choice input{accent-color:var(--caramel)}.choice small{color:var(--caramel);font-weight:900}.drawer-reviews{display:grid;gap:10px}.review{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}.review-top{display:flex;justify-content:space-between;gap:10px;color:var(--caramel);font-weight:900;font-size:.78rem}.review p{color:var(--muted);font-weight:700;font-size:.88rem;margin-top:5px}.cart-meta{margin-top:5px;color:var(--muted);font-size:.72rem;font-weight:750;line-height:1.35}.cart-meta div{white-space:normal}.cart-item h4{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.field.is-hidden{display:none}.field select:disabled,.field input:disabled{opacity:.65;cursor:not-allowed}
+@media(max-width:760px){.promo-banner{display:block;text-align:left;margin-top:12px}.promo-banner .promo-pill{display:inline-flex;margin-top:10px}.option-group{padding:12px}.choice{font-size:.86rem}}
 
 </style>
 </head>
@@ -229,6 +235,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opa
  <a href="#destaques">Destaques</a><a href="#cardapio">Cardápio</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
 </div>
 <main>
+<section class="promo-banner" aria-label="Promoção da cafeteria">
+ <div><strong>☕ Combo da tarde — 10% OFF</strong><br><span>Promoção especial para cafés, doces e combos selecionados.</span></div>
+ <span class="promo-pill">Oferta por tempo limitado</span>
+</section>
+
 <section class="hero">
  <div class="hero-content">
   <div class="eyebrow">☕ Cafés, bolos e boas conversas</div>
@@ -312,6 +323,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opa
   <p class="drawer-desc" id="drawerDesc"></p>
   <div class="info-label">Ingredientes</div><div class="info-box" id="drawerIngredients"></div>
   <div class="info-label">Informações nutricionais</div><div class="nutri-grid" id="drawerNutri"></div>
+  <div id="drawerOptions"></div>
+  <div class="info-label">Avaliações dos clientes</div><div class="drawer-reviews" id="drawerReviews"></div>
  </div>
  <div class="drawer-footer">
   <div class="qty-row"><span>Quantidade</span><div class="qty"><button onclick="drawerQtyChange(-1)" aria-label="Diminuir">−</button><span id="drawerQty">1</span><button onclick="drawerQtyChange(1)" aria-label="Aumentar">+</button></div></div>
@@ -323,7 +336,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opa
  <div class="cart-header"><div class="cart-title">Seu pedido</div><button class="cart-close" onclick="toggleCart()" aria-label="Fechar">×</button></div>
  <div class="cart-body" id="cartItems"></div>
  <div class="cart-footer">
-  <div class="field"><label for="addressInput">Endereço de entrega</label><input id="addressInput" placeholder="Rua, número, bairro e referência" autocomplete="street-address"></div>
+  <div class="field"><label for="fulfillmentMethod">Como deseja receber o pedido?</label><select id="fulfillmentMethod" required aria-required="true" onchange="handleFulfillmentChange()"><option value="" selected disabled>Selecione como deseja receber seu pedido</option><option value="Entrega">Entrega</option><option value="Retirada no Local">Retirada no Local</option></select></div>
+  <div class="field is-hidden" id="addressField"><label for="addressInput">Endereço de entrega</label><input id="addressInput" placeholder="Rua, número, bairro e referência" autocomplete="street-address" disabled></div>
   <div class="field"><label for="paymentMethod">Forma de Pagamento</label><select id="paymentMethod" required aria-required="true"><option value="" selected disabled>Selecione a forma de pagamento</option><option value="Pix">Pix</option><option value="Cartão de Crédito">Cartão de Crédito</option><option value="Cartão de Débito">Cartão de Débito</option></select></div>
   <div class="total"><span>Total</span><b id="cartTotal">R$ 0,00</b></div>
   <button class="add-cart whatsapp" onclick="finalizarPedido()"><svg class="whatsapp-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32 101.5 32 1.9 131.6 1.9 254c0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.5-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.5-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> Enviar pedido pelo WhatsApp</button>
@@ -527,10 +541,92 @@ let filtroAtual = "todos";
 let buscaAtual = "";
 let drawerProduct = null;
 let drawerQty = 1;
+let selectedVariations = {};
+let selectedAddons = [];
 
 const $ = (id) => document.getElementById(id);
 const fmtPreco = (v) => v.toLocaleString("pt-BR", { style:"currency", currency:"BRL" });
 const catLabel = (cat) => (CATS.find(c => c[0] === cat) || ["", cat])[1];
+
+
+function stars(value=5) {
+ const full = Math.round(value);
+ return "★".repeat(full) + "☆".repeat(Math.max(0, 5-full));
+}
+function getReviews(p) {
+ const base = [
+  { nome:"Maria", data:"12/06/2026", nota:5, texto:"Café excelente e muito bem preparado." },
+  { nome:"João", data:"08/06/2026", nota:5, texto:"O cappuccino é um dos melhores da cidade." },
+  { nome:"Ana", data:"31/05/2026", nota:4, texto:"Pedido caprichado, chegou bem embalado." }
+ ];
+ const extra = p.cat === "festas" ? { nome:"Carla", data:"20/05/2026", nota:5, texto:"Ótima opção para receber visitas sem preocupação." } : { nome:"Pedro", data:"24/05/2026", nota:5, texto:"Sabor caseiro e atendimento muito atencioso." };
+ return [...base, extra];
+}
+function averageRating(p) {
+ const list = getReviews(p);
+ return list.reduce((s,r)=>s+r.nota,0) / list.length;
+}
+function productConfig(p) {
+ const drink = ["cafe","gelado","chocolate"].includes(p.cat);
+ const sweet = p.cat === "doce";
+ const party = p.cat === "festas";
+ const configs = { variations: [], addons: [] };
+ if (drink) {
+  configs.variations.push({ id:"tamanho", label:"Tamanho", required:true, options:["Pequeno","Médio","Grande"] });
+  configs.variations.push({ id:"temperatura", label:"Temperatura", required:true, options:p.cat === "gelado" ? ["Gelado"] : ["Quente","Gelado"] });
+  configs.variations.push({ id:"acucar", label:"Açúcar", required:false, options:["Sem açúcar","Pouco açúcar","Normal"] });
+  configs.addons.push({ id:"leite-vegetal", label:"Leite vegetal", price:4.00 },{ id:"chantilly", label:"Chantilly", price:3.00 },{ id:"calda-extra", label:"Calda extra", price:2.50 },{ id:"drizzle", label:"Finalização de chocolate", price:2.00 });
+ }
+ if (sweet) {
+  configs.variations.push({ id:"sabor", label:"Sabor", required:false, options:["Tradicional","Morango","Chocolate","Doce de leite"] });
+  configs.addons.push({ id:"embalagem-presente", label:"Embalagem para presente", price:5.00 },{ id:"calda-extra", label:"Calda extra", price:2.50 },{ id:"bola-sorvete", label:"Bola de sorvete", price:6.00 });
+ }
+ if (party) {
+  configs.variations.push({ id:"tamanho", label:"Tamanho da encomenda", required:true, options:["Pequeno","Médio","Grande"] });
+  configs.variations.push({ id:"sabor", label:"Sabores preferidos", required:false, options:["Sortido","Mais doces","Mais salgados"] });
+  configs.addons.push({ id:"embalagem-presente", label:"Embalagem para presente", price:8.00 },{ id:"cartao", label:"Cartão com mensagem", price:3.00 });
+ }
+ if (["padaria","brunch","combo","salgado"].includes(p.cat)) {
+  configs.variations.push({ id:"aquecimento", label:"Preparo", required:false, options:["Natural","Aquecido"] });
+  configs.addons.push({ id:"embalagem-presente", label:"Embalagem para presente", price:5.00 },{ id:"molho-extra", label:"Molho ou calda extra", price:2.50 });
+ }
+ return configs;
+}
+function selectedAddonsTotal() { return selectedAddons.reduce((sum, add) => sum + add.price, 0); }
+function unitPriceForSelection() { return drawerProduct ? drawerProduct.preco + selectedAddonsTotal() : 0; }
+function cartKey(item) {
+ const vars = Object.entries(item.variations || {}).sort().map(([k,v]) => `${k}:${v}`).join("|");
+ const adds = (item.addons || []).map(a=>a.id).sort().join("|");
+ return `${item.id}__${vars}__${adds}`;
+}
+function renderDrawerOptions() {
+ if (!drawerProduct) return;
+ const config = productConfig(drawerProduct);
+ const variationHtml = config.variations.map(group => `<div class="option-group" data-group="${group.id}"><div class="option-title"><span>${group.label}</span>${group.required ? '<span class="required-mark">Obrigatório</span>' : ''}</div><div class="choice-list">${group.options.map(opt => `<label class="choice"><span><input type="radio" name="variation-${group.id}" value="${opt}" ${selectedVariations[group.id]===opt?'checked':''} onchange="setVariation('${group.id}', '${opt.replace(/'/g,"\\'")}')"> ${opt}</span></label>`).join("")}</div></div>`).join("");
+ const addonHtml = config.addons.length ? `<div class="option-group"><div class="option-title"><span>Adicionais pagos</span><span>Opcional</span></div><div class="choice-list">${config.addons.map(add => `<label class="choice"><span><input type="checkbox" value="${add.id}" ${selectedAddons.some(a=>a.id===add.id)?'checked':''} onchange="toggleAddon('${add.id}')"> ${add.label}</span><small>+ ${fmtPreco(add.price)}</small></label>`).join("")}</div></div>` : "";
+ $("drawerOptions").innerHTML = variationHtml + addonHtml;
+}
+function renderDrawerReviews(p) {
+ $("drawerReviews").innerHTML = getReviews(p).map(r => `<div class="review"><div class="review-top"><span>${stars(r.nota)}</span><span>${r.nome} · ${r.data}</span></div><p>“${r.texto}”</p></div>`).join("");
+}
+function setVariation(groupId, value) { selectedVariations[groupId] = value; updateDrawerButton(); }
+function toggleAddon(addonId) {
+ const addon = productConfig(drawerProduct).addons.find(a => a.id === addonId);
+ if (!addon) return;
+ selectedAddons = selectedAddons.some(a => a.id === addonId) ? selectedAddons.filter(a => a.id !== addonId) : [...selectedAddons, addon];
+ updateDrawerButton();
+}
+function validateDrawerSelection() {
+ const missing = productConfig(drawerProduct).variations.find(group => group.required && !selectedVariations[group.id]);
+ if (missing) { showToast(`⚠️ Escolha uma opção em ${missing.label}.`); return false; }
+ return true;
+}
+function variationLines(item) { return Object.entries(item.variations || {}).map(([key,value]) => `${key.charAt(0).toUpperCase()+key.slice(1)}: ${value}`); }
+function addonLines(item) { return (item.addons || []).map(add => `${add.label} (+ ${fmtPreco(add.price)})`); }
+function itemMetaHtml(item) {
+ const lines = [...variationLines(item), ...addonLines(item).map(x => `Adicional: ${x}`)];
+ return lines.length ? `<div class="cart-meta">${lines.map(l=>`<div>${l}</div>`).join("")}</div>` : "";
+}
 
 function nutriTexto(p) {
  const n = p.nutri || {};
@@ -543,10 +639,11 @@ function nutriHtml(p) {
  ].map(([k,v]) => `<div class="nutri"><b>${v}</b><span>${k}</span></div>`).join("");
 }
 function cardTemplate(p, destaque=false) {
+ const rating = averageRating(p);
  return `<article class="card" role="button" tabindex="0" onclick="openDrawer(${p.id})" onkeydown="if(event.key==='Enter')openDrawer(${p.id})">
   <div class="card-img-wrap"><img src="${p.img}" alt="${p.nome}" loading="lazy"><span class="card-badge">${destaque ? "Destaque" : catLabel(p.cat)}</span></div>
-  <div class="card-body"><h3 class="card-title">${p.nome}</h3><p class="ingredients">${p.ingredientes}</p><p class="nutrition">${nutriTexto(p)}</p>
-   <div class="card-footer"><strong class="price">${fmtPreco(p.preco)}</strong><button class="quick-add" onclick="event.stopPropagation(); adicionar(${p.id})" aria-label="Adicionar ${p.nome}">+</button></div>
+  <div class="card-body"><h3 class="card-title">${p.nome}</h3><div class="rating-row"><span>${stars(rating)}</span><span>${rating.toFixed(1)} · ${getReviews(p).length} avaliações</span></div><p class="ingredients">${p.ingredientes}</p><p class="nutrition">${nutriTexto(p)}</p>
+   <div class="card-footer"><strong class="price">${fmtPreco(p.preco)}</strong><button class="quick-add" onclick="event.stopPropagation(); openDrawer(${p.id})" aria-label="Personalizar ${p.nome}">+</button></div>
   </div>
  </article>`;
 }
@@ -572,11 +669,11 @@ function renderMenu() {
 function openDrawer(id) {
  const p = PRODUTOS.find(x => x.id === id);
  if (!p) return;
- drawerProduct = p; drawerQty = 1;
+ drawerProduct = p; drawerQty = 1; selectedVariations = {}; selectedAddons = [];
  $("drawerImg").src = p.img; $("drawerImg").alt = p.nome; $("drawerCat").textContent = catLabel(p.cat);
  $("drawerName").textContent = p.nome; $("drawerPrice").textContent = fmtPreco(p.preco); $("drawerDesc").textContent = p.desc;
  $("drawerIngredients").textContent = p.ingredientes; $("drawerNutri").innerHTML = nutriHtml(p);
- updateDrawerButton();
+ renderDrawerOptions(); renderDrawerReviews(p); updateDrawerButton();
  $("drawerOverlay").classList.add("open"); $("productDrawer").classList.add("open"); $("productDrawer").setAttribute("aria-hidden","false");
  document.body.classList.add("no-scroll");
 }
@@ -587,49 +684,54 @@ function closeDrawer() {
 function drawerQtyChange(delta) { drawerQty = Math.max(1, drawerQty + delta); updateDrawerButton(); }
 function updateDrawerButton() {
  $("drawerQty").textContent = drawerQty;
- if (drawerProduct) $("drawerAddBtn").textContent = `Adicionar ao carrinho · ${fmtPreco(drawerProduct.preco * drawerQty)}`;
+ if (drawerProduct) {
+  $("drawerPrice").textContent = fmtPreco(unitPriceForSelection());
+  $("drawerAddBtn").textContent = `Adicionar ao carrinho · ${fmtPreco(unitPriceForSelection() * drawerQty)}`;
+ }
 }
 function drawerAddToCart() {
- if (!drawerProduct) return;
- adicionar(drawerProduct.id, drawerQty);
+ if (!drawerProduct || !validateDrawerSelection()) return;
+ adicionar(drawerProduct.id, drawerQty, { variations:{...selectedVariations}, addons:selectedAddons.map(a=>({...a})), unitPrice:unitPriceForSelection() });
  showToast(`✓ ${drawerQty}x ${drawerProduct.nome} adicionado`);
  closeDrawer();
  toggleCart(true);
 }
-function adicionar(id, qtd=1) {
+function adicionar(id, qtd=1, config=null) {
  const p = PRODUTOS.find(x => x.id === id); if (!p) return;
- const item = carrinho.find(x => x.id === id);
- if (item) item.qtd += qtd; else carrinho.push({ ...p, qtd });
+ const newItem = { ...p, qtd, variations:config?.variations || {}, addons:config?.addons || [], unitPrice:config?.unitPrice || p.preco };
+ const key = cartKey(newItem);
+ const item = carrinho.find(x => cartKey(x) === key);
+ if (item) item.qtd += qtd; else carrinho.push(newItem);
  salvar(); renderCart();
  showToast(`✓ ${p.nome} no carrinho`);
 }
-function diminuir(id) {
- const item = carrinho.find(p => p.id === id); if (!item) return;
- item.qtd--; if (item.qtd <= 0) carrinho = carrinho.filter(p => p.id !== id);
+function diminuir(key) {
+ const item = carrinho.find(p => cartKey(p) === key); if (!item) return;
+ item.qtd--; if (item.qtd <= 0) carrinho = carrinho.filter(p => cartKey(p) !== key);
  salvar(); renderCart();
 }
-function aumentar(id) {
- const item = carrinho.find(p => p.id === id); if (!item) return;
+function aumentar(key) {
+ const item = carrinho.find(p => cartKey(p) === key); if (!item) return;
  item.qtd++; salvar(); renderCart();
 }
-function remover(id) { carrinho = carrinho.filter(p => p.id !== id); salvar(); renderCart(); }
+function remover(key) { carrinho = carrinho.filter(p => cartKey(p) !== key); salvar(); renderCart(); }
 function salvar() { localStorage.setItem("prosa_cart_v2", JSON.stringify(carrinho)); }
 function renderCart() {
  const count = carrinho.reduce((s,p)=>s+p.qtd,0);
- const total = carrinho.reduce((s,p)=>s+p.preco*p.qtd,0);
+ const total = carrinho.reduce((s,p)=>s+(p.unitPrice || p.preco)*p.qtd,0);
  $("cartBadge").textContent = count; $("cartTotal").textContent = fmtPreco(total);
  $("mobileCartText").textContent = count ? `${count} item${count>1?"s":""} no carrinho` : "Carrinho vazio";
  $("mobileCartSub").textContent = count ? fmtPreco(total) : "Escolha seus produtos";
  if (!carrinho.length) {
-  $("cartItems").innerHTML = `<div class="cart-empty"><div>☕</div><h3>Seu carrinho está vazio</h3><p>Toque em um produto para ver detalhes ou adicione direto pelo botão +.</p></div>`;
+  $("cartItems").innerHTML = `<div class="cart-empty"><div>☕</div><h3>Seu carrinho está vazio</h3><p>Toque em um produto para ver detalhes, escolher variações e adicionar ao carrinho.</p></div>`;
   return;
  }
- $("cartItems").innerHTML = carrinho.map(p => `<div class="cart-item">
+ $("cartItems").innerHTML = carrinho.map(p => { const key = cartKey(p); return `<div class="cart-item">
   <img src="${p.img}" alt="${p.nome}">
-  <div><h4>${p.nome}</h4><small>${fmtPreco(p.preco)} cada</small></div>
-  <div class="qty"><button onclick="diminuir(${p.id})" aria-label="Diminuir">−</button><span>${p.qtd}</span><button onclick="aumentar(${p.id})" aria-label="Aumentar">+</button></div>
-  <button class="remove" onclick="remover(${p.id})" aria-label="Remover">×</button>
- </div>`).join("");
+  <div><h4>${p.nome}</h4><small>${fmtPreco(p.unitPrice || p.preco)} cada</small>${itemMetaHtml(p)}</div>
+  <div class="qty"><button onclick="diminuir('${key}')" aria-label="Diminuir">−</button><span>${p.qtd}</span><button onclick="aumentar('${key}')" aria-label="Aumentar">+</button></div>
+  <button class="remove" onclick="remover('${key}')" aria-label="Remover">×</button>
+ </div>`; }).join("");
 }
 function toggleCart(forceOpen=false) {
  const open = forceOpen || !$("cartSidebar").classList.contains("open");
@@ -637,11 +739,33 @@ function toggleCart(forceOpen=false) {
  $("cartSidebar").setAttribute("aria-hidden", open ? "false" : "true");
  document.body.classList.toggle("no-scroll", open || $("productDrawer").classList.contains("open"));
 }
+function handleFulfillmentChange() {
+ const method = $("fulfillmentMethod").value;
+ const addressField = $("addressField");
+ const addressInput = $("addressInput");
+ const isDelivery = method === "Entrega";
+
+ addressField.classList.toggle("is-hidden", !isDelivery);
+ addressInput.disabled = !isDelivery;
+ addressInput.required = isDelivery;
+ addressInput.setAttribute("aria-required", isDelivery ? "true" : "false");
+
+ if (!isDelivery) {
+  addressInput.value = "";
+  addressInput.blur();
+ }
+}
 function finalizarPedido() {
  if (!carrinho.length) { showToast("⚠️ Seu carrinho está vazio"); return; }
+ const fulfillment = $("fulfillmentMethod").value;
  const addr = $("addressInput").value.trim();
  const payment = $("paymentMethod").value;
- if (!addr) {
+ if (!fulfillment) {
+  $("fulfillmentMethod").focus();
+  showToast("⚠️ Por favor, selecione como deseja receber seu pedido.");
+  return;
+ }
+ if (fulfillment === "Entrega" && !addr) {
   $("addressInput").focus();
   showToast("⚠️ Por favor, preencha o endereço de entrega antes de enviar o pedido.");
   return;
@@ -651,8 +775,12 @@ function finalizarPedido() {
   showToast("⚠️ Por favor, selecione a forma de pagamento antes de enviar o pedido.");
   return;
  }
- const itens = carrinho.map(p => `• ${p.qtd} × ${p.nome}`).join("\n");
- const msg = `Olá Regiane! 👋\n\nGostaria de fazer o seguinte pedido:\n\n${itens}\n\nForma de pagamento:\n${payment}\n\nEndereço para entrega:\n${addr}\n\nObrigado!`;
+ const itens = carrinho.map(p => {
+  const details = [...variationLines(p), ...addonLines(p).map(x => `Adicional: ${x}`)];
+  return `• ${p.qtd} × ${p.nome}${details.length ? "\n  " + details.join("\n  ") : ""}`;
+ }).join("\n");
+ const recebimento = fulfillment === "Entrega" ? `Entrega\n\nEndereço para entrega:\n${addr}` : "Retirada no Local";
+ const msg = `Olá Regiane! 👋\n\nGostaria de fazer o seguinte pedido:\n\n${itens}\n\nForma de receber:\n${recebimento}\n\nForma de pagamento:\n${payment}\n\nObrigado!`;
  window.open(`https://wa.me/5515999999999?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
 }
 function scrollToLoja() { document.querySelector("#loja").scrollIntoView({behavior:"smooth", block:"center"}); }
@@ -666,6 +794,7 @@ $("mobileMenuBtn").addEventListener("click", () => {
 document.querySelectorAll(".mobile-panel a").forEach(a => a.addEventListener("click",()=>{ $("mobilePanel").classList.remove("open"); $("mobileMenuBtn").setAttribute("aria-expanded","false"); }));
 window.addEventListener("scroll", () => $("mainHeader").classList.toggle("scrolled", scrollY > 8), {passive:true});
 document.addEventListener("keydown", e => { if(e.key==="Escape"){ closeDrawer(); if($("cartSidebar").classList.contains("open")) toggleCart(); } });
+handleFulfillmentChange();
 renderFilters(); renderFeatured(); renderMenu(); renderCart();
 </script>
 </body>
