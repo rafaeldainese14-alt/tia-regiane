@@ -172,6 +172,9 @@ h1 span{color:var(--caramel)}
 .field label{font-size:.72rem;color:var(--muted);font-weight:900;letter-spacing:.1em;text-transform:uppercase}
 .field input{width:100%;min-height:46px;border:1px solid var(--line);border-radius:14px;background:var(--cream);padding:0 13px;outline:0;font-weight:700;margin-top:6px}
 .field input:focus{border-color:var(--caramel);background:#fff}
+.field select{width:100%;min-height:46px;border:1px solid var(--line);border-radius:14px;background:var(--cream);padding:0 42px 0 13px;outline:0;font-weight:800;margin-top:6px;color:var(--espresso);appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--coffee) 50%),linear-gradient(135deg,var(--coffee) 50%,transparent 50%);background-position:calc(100% - 20px) 20px,calc(100% - 14px) 20px;background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+.field select:invalid{color:var(--muted)}
+.field select:focus{border-color:var(--caramel);background-color:#fff;box-shadow:0 0 0 4px rgba(200,146,58,.13)}
 .total{display:flex;justify-content:space-between;align-items:center;margin:14px 0;font-weight:900}
 .total b{font-family:"Playfair Display",serif;font-size:1.55rem}
 .whatsapp{background:var(--success)}
@@ -187,7 +190,8 @@ h1 span{color:var(--caramel)}
 .toast.show{opacity:1;transform:translateY(0)}
 @media(max-width:1100px){.featured-grid,.menu-grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr}.hero-card img{height:420px}.about{grid-template-columns:1fr}}
 @media(max-width:760px){body{padding-bottom:88px}.brand-copy{display:none}.nav{display:none}.mobile-menu-btn{display:inline-flex}.header{height:76px}:root{--header:76px}.logo{width:76px;height:76px}.cart-btn span.label{display:none}.hero{padding:24px 16px 42px;gap:22px}.hero-actions .btn-primary,.hero-actions .btn-secondary{width:100%}.hero-card{border-radius:28px}.hero-card img{height:320px}.hero-floating{position:static;margin-top:-24px;margin-left:12px;margin-right:12px;max-width:none}.stats{grid-template-columns:repeat(2,1fr);margin:0 16px;border-radius:24px}.stat{padding:18px 12px}.section{padding:56px 16px}.section-head{display:block}.section-head p{margin-top:10px}.featured-grid,.menu-grid{grid-template-columns:repeat(2,1fr);gap:12px}.card{border-radius:20px}.card-body{padding:12px}.card-title{font-size:.92rem}.ingredients{font-size:.73rem}.nutrition{font-size:.66rem}.controls{grid-template-columns:1fr}.cta-band{display:block;padding:24px}.cta-band .btn-{margin-top:16px;width:100%}.about-media img{height:300px}.nutri-grid{grid-template-columns:repeat(2,1fr)}.fab{display:none}.mobile-cart-bar{display:flex}.toast{left:16px;right:16px;bottom:100px;text-align:center}}
-@media(max-width:420px){.featured-grid,.menu-grid{grid-template-columns:1fr}.cart-item{grid-template-columns:52px 1fr auto;position:relative}.cart-item .remove{position:absolute;right:8px;top:8px}.cart-item h4{max-width:160px}}
+@media(max-width:420px){.featured-grid,.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card-img-wrap{aspect-ratio:1/1}.quick-add{width:38px;height:38px}.price{font-size:1rem}.cart-item{grid-template-columns:52px 1fr auto;position:relative}.cart-item .remove{position:absolute;right:8px;top:8px}.cart-item h4{max-width:160px}}
+@media(max-width:340px){.featured-grid,.menu-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
 /* ===== Ajustes visuais da cafeteria ===== */
@@ -269,7 +273,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opa
   <div class="filters" id="filters" aria-label="Filtros do cardápio"></div>
   <label class="search" aria-label="Pesquisar produto">
    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-   <input id="searchInput" type="search" placeholder="Buscar café, doce, combo..." autocomplete="off">
+   <input id="searchInput" type="search" placeholder="Buscar café, doce, salgado, festa..." autocomplete="off">
   </label>
  </div>
  <div class="menu-grid" id="menuGrid"></div>
@@ -319,7 +323,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opa
  <div class="cart-header"><div class="cart-title">Seu pedido</div><button class="cart-close" onclick="toggleCart()" aria-label="Fechar">×</button></div>
  <div class="cart-body" id="cartItems"></div>
  <div class="cart-footer">
-  <div class="field"><label for="addressInput">Endereço de entrega</label><input id="addressInput" placeholder="Rua, número, bairro e referência"></div>
+  <div class="field"><label for="addressInput">Endereço de entrega</label><input id="addressInput" placeholder="Rua, número, bairro e referência" autocomplete="street-address"></div>
+  <div class="field"><label for="paymentMethod">Forma de Pagamento</label><select id="paymentMethod" required aria-required="true"><option value="" selected disabled>Selecione a forma de pagamento</option><option value="Pix">Pix</option><option value="Cartão de Crédito">Cartão de Crédito</option><option value="Cartão de Débito">Cartão de Débito</option></select></div>
   <div class="total"><span>Total</span><b id="cartTotal">R$ 0,00</b></div>
   <button class="add-cart whatsapp" onclick="finalizarPedido()"><svg class="whatsapp-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32 101.5 32 1.9 131.6 1.9 254c0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.5-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.5-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> Enviar pedido pelo WhatsApp</button>
  </div>
@@ -489,9 +494,33 @@ const PRODUTOS = [
    desc:"Cappuccino + Croissant + Fruta da Estação. O café da manhã completo que você merece.",
    ingredientes:"Cappuccino, Croissant artesanal, fruta da estação, geleia de frutas vermelhas.",
    nutri:{cal:550, carb:64, prot:18, fat:24} },
+ { id:41, nome:"Mini Salgados", preco:49.90, cat:"festas", img:"https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=85",
+   desc:"Porção com mini salgados variados, assados e fritos, ideal para reuniões, aniversários e encontros especiais.",
+   ingredientes:"Coxinha, bolinha de queijo, quibe, empadinha, pastelzinho e temperos da casa.",
+   nutri:{cal:680, carb:72, prot:24, fat:34} },
+ { id:42, nome:"Mini Sanduíches", preco:54.90, cat:"festas", img:"https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600&q=85",
+   desc:"Mini sanduíches macios e bem recheados para servir com praticidade em eventos e coffee breaks.",
+   ingredientes:"Pão artesanal, queijo, presunto, frango cremoso, alface, tomate e patês da casa.",
+   nutri:{cal:590, carb:64, prot:28, fat:22} },
+ { id:43, nome:"Kit Café da Manhã", preco:89.90, cat:"festas", img:"https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&q=85",
+   desc:"Kit especial com itens de café da manhã para presentear ou compartilhar em família com muito carinho.",
+   ingredientes:"Pães, bolo caseiro, frutas, geleia, manteiga, suco, café e opções selecionadas do dia.",
+   nutri:{cal:920, carb:118, prot:30, fat:36} },
+ { id:44, nome:"Caixa de Doces", preco:59.90, cat:"festas", img:"https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=85",
+   desc:"Seleção de doces artesanais em caixa charmosa, perfeita para festas, lembranças e mesas de sobremesa.",
+   ingredientes:"Brigadeiros, beijinhos, brownies, mini tortinhas, chocolate, leite condensado e confeitos.",
+   nutri:{cal:760, carb:104, prot:12, fat:32} },
+ { id:45, nome:"Tábua de Frios", preco:119.90, cat:"festas", img:"https://images.unsplash.com/photo-1546039907-7fa05f864c02?w=600&q=85",
+   desc:"Tábua montada com frios, queijos e acompanhamentos para receber convidados com elegância.",
+   ingredientes:"Queijos, salame, presunto, peito de peru, azeitonas, frutas, castanhas, torradas e geleia.",
+   nutri:{cal:980, carb:46, prot:54, fat:68} },
+ { id:46, nome:"Combo Festa", preco:169.90, cat:"festas", img:"https://images.unsplash.com/photo-1555244162-803834f70033?w=600&q=85",
+   desc:"Combo completo para pequenas comemorações, com salgados, doces e bebidas para deixar tudo mais fácil.",
+   ingredientes:"Mini salgados, mini sanduíches, caixa de doces, sucos, café coado e guardanapos.",
+   nutri:{cal:1450, carb:180, prot:62, fat:58} },
 ];
 const CATS = [
- ["todos","Todos"],["cafe","Cafés"],["gelado","Gelados"],["chocolate","Chocolates"],["doce","Doces"],["salgado","Salgados"],["combo","Combos"]
+ ["todos","Todos"],["cafe","Cafés"],["gelado","Gelados"],["chocolate","Chocolates"],["doce","Doces"],["salgado","Salgados"],["combo","Combos"],["festas","🎉 Para Festas"]
 ];
 let carrinho = JSON.parse(localStorage.getItem("prosa_cart_v2") || "[]");
 let filtroAtual = "todos";
@@ -611,13 +640,19 @@ function toggleCart(forceOpen=false) {
 function finalizarPedido() {
  if (!carrinho.length) { showToast("⚠️ Seu carrinho está vazio"); return; }
  const addr = $("addressInput").value.trim();
+ const payment = $("paymentMethod").value;
  if (!addr) {
   $("addressInput").focus();
-  showToast("⚠️ Por favor, informe seu endereço de entrega antes de enviar o pedido.");
+  showToast("⚠️ Por favor, preencha o endereço de entrega antes de enviar o pedido.");
+  return;
+ }
+ if (!payment) {
+  $("paymentMethod").focus();
+  showToast("⚠️ Por favor, selecione a forma de pagamento antes de enviar o pedido.");
   return;
  }
  const itens = carrinho.map(p => `• ${p.qtd} × ${p.nome}`).join("\n");
- const msg = `Olá Regiane! 👋\n\nEu gostaria de fazer o seguinte pedido:\n\n${itens}\n\nEndereço de entrega:\n${addr}\n\nObrigada!`;
+ const msg = `Olá Regiane! 👋\n\nGostaria de fazer o seguinte pedido:\n\n${itens}\n\nForma de pagamento:\n${payment}\n\nEndereço para entrega:\n${addr}\n\nObrigado!`;
  window.open(`https://wa.me/5515999999999?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
 }
 function scrollToLoja() { document.querySelector("#loja").scrollIntoView({behavior:"smooth", block:"center"}); }
