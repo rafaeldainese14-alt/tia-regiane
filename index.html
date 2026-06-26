@@ -595,8 +595,7 @@ function finalizarPedido() {
     return;
   }
   const itens = carrinho.map(p => `• ${p.qtd} × ${p.nome}`).join("\n");
-  const msg =
-    `Olá Regiane,%0A%0AEu gostaria de encomendar: ${encodeURIComponent(itensTxt)}.%0A%0AMeu endereço é: ${encodeURIComponent(addr)}.%0A%0A💰 *Total: ${totalFmt}*`;
+  const msg = `Olá regiane! 👋\n\nEu gostaria de encomendar:\n\n${itens}\n\nMeu endereço:\n${addr}\n\nObrigado`;
   window.open(`https://wa.me/5515999999999?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
 }
 function scrollToLoja() { document.querySelector("#loja").scrollIntoView({behavior:"smooth", block:"center"}); }
