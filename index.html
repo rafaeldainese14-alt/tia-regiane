@@ -214,6 +214,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opa
 .rating-row{display:flex;align-items:center;gap:7px;color:var(--caramel);font-size:.78rem;font-weight:900}.rating-row span:last-child{color:var(--muted);font-weight:800}.option-group{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;margin:14px 0}.option-title{display:flex;justify-content:space-between;gap:12px;font-size:.82rem;font-weight:900;color:var(--espresso);margin-bottom:10px}.required-mark{color:var(--danger);font-size:.72rem}.choice-list{display:grid;gap:8px}.choice{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);background:var(--cream);border-radius:14px;padding:10px 12px;font-weight:800;color:var(--coffee);cursor:pointer}.choice input{accent-color:var(--caramel)}.choice small{color:var(--caramel);font-weight:900}.drawer-reviews{display:grid;gap:10px}.review{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}.review-top{display:flex;justify-content:space-between;gap:10px;color:var(--caramel);font-weight:900;font-size:.78rem}.review p{color:var(--muted);font-weight:700;font-size:.88rem;margin-top:5px}.cart-meta{margin-top:5px;color:var(--muted);font-size:.72rem;font-weight:750;line-height:1.35}.cart-meta div{white-space:normal}.cart-item h4{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.field.is-hidden{display:none}.field select:disabled,.field input:disabled{opacity:.65;cursor:not-allowed}
 @media(max-width:760px){.promo-banner{display:block;text-align:left;margin-top:12px}.promo-banner .promo-pill{display:inline-flex;margin-top:10px}.option-group{padding:12px}.choice{font-size:.86rem}}
 
+
+/* ===== Extensões premium: promoções, favoritos, recentes, status, mapa e confirmação ===== */
+.price-stack{display:flex;flex-direction:column;gap:2px;line-height:1}.old-price{text-decoration:line-through;color:var(--soft);font:900 .76rem Quicksand,system-ui,sans-serif}.promo-price{color:var(--danger)!important}.prep-time{color:var(--muted);font-size:.72rem;font-weight:900;white-space:nowrap}.fav-btn{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.94);border:1px solid var(--line);box-shadow:0 8px 20px rgba(44,26,14,.14);z-index:4;font-size:1.25rem;color:var(--coffee);transition:transform var(--ease),background var(--ease),color var(--ease)}.fav-btn:hover{transform:scale(1.08)}.fav-btn.active{background:var(--pink);color:#b2274d}.badge-row{position:absolute;left:12px;bottom:12px;right:12px;display:flex;gap:6px;flex-wrap:wrap;z-index:3}.promo-tag{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:999px;padding:5px 8px;font-size:.66rem;font-weight:900;color:var(--espresso)}.smart-section{background:linear-gradient(180deg,rgba(255,255,255,.45),rgba(250,245,238,.85))}.horizontal-products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.smart-empty{background:#fff;border:1px dashed var(--line);border-radius:24px;padding:24px;color:var(--muted);font-weight:800;text-align:center}.recommend-card{background:#fff7ec;border:1px solid rgba(200,146,58,.28);border-radius:18px;padding:14px;margin:12px 0;box-shadow:0 8px 22px rgba(44,26,14,.05)}.recommend-card strong{display:block;margin-bottom:8px}.recommend-list{display:flex;gap:8px;flex-wrap:wrap}.recommend-list button{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 10px;font-weight:900;color:var(--coffee)}.recommend-list button:hover{background:var(--espresso);color:#fff}.cart-bounce{animation:cartBounce .46s cubic-bezier(.2,.8,.2,1)}@keyframes cartBounce{0%,100%{transform:scale(1)}35%{transform:scale(1.12)}65%{transform:scale(.96)}}.fly-img{position:fixed;z-index:2000;width:72px;height:72px;border-radius:18px;object-fit:cover;box-shadow:0 18px 42px rgba(44,26,14,.25);pointer-events:none;transition:transform .72s cubic-bezier(.16,.84,.28,1),opacity .72s ease}.field textarea{width:100%;min-height:76px;border:1px solid var(--line);border-radius:14px;background:var(--cream);padding:12px 13px;outline:0;font-weight:700;margin-top:6px;resize:vertical;color:var(--espresso)}.field textarea:focus{border-color:var(--caramel);background:#fff;box-shadow:0 0 0 4px rgba(200,146,58,.13)}.store-status{display:inline-flex;flex-direction:column;gap:2px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px 14px;box-shadow:0 8px 22px rgba(44,26,14,.06);font-weight:900}.store-status small{color:var(--muted);font-weight:800}.location-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);gap:20px;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:30px;padding:18px;box-shadow:var(--shadow-soft)}.map-box{border:0;border-radius:24px;min-height:280px;width:100%;overflow:hidden}.map-box iframe{width:100%;height:100%;min-height:280px;border:0}.confirmation{position:fixed;inset:0;background:rgba(250,245,238,.96);backdrop-filter:blur(10px);display:grid;place-items:center;z-index:2200;opacity:0;pointer-events:none;transition:opacity .34s ease}.confirmation.open{opacity:1;pointer-events:auto}.confirmation-card{width:min(440px,92vw);background:#fff;border:1px solid var(--line);border-radius:32px;padding:34px 24px;text-align:center;box-shadow:var(--shadow);transform:translateY(18px) scale(.96);transition:transform .38s cubic-bezier(.2,.8,.2,1)}.confirmation.open .confirmation-card{transform:translateY(0) scale(1)}.success-mark{width:82px;height:82px;border-radius:50%;background:rgba(37,211,102,.14);color:var(--success);display:grid;place-items:center;margin:0 auto 16px;font-size:2.4rem;animation:successPop .8s cubic-bezier(.2,.8,.2,1)}@keyframes successPop{0%{transform:scale(.5);opacity:0}65%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}.confirmation-card h2{font-family:"Playfair Display",serif;font-size:1.9rem;margin-bottom:8px}.confirmation-card p{color:var(--muted);font-weight:750;margin-bottom:18px}.fab{will-change:transform;backface-visibility:hidden}.fab-message{position:absolute;right:70px;bottom:4px;width:245px;background:#fff;color:var(--espresso);border:1px solid var(--line);border-radius:18px;padding:12px 14px;box-shadow:var(--shadow-soft);opacity:0;transform:translate3d(8px,0,0);pointer-events:none;transition:opacity .26s ease,transform .26s ease}.fab:hover .fab-message,.fab:focus-visible .fab-message{opacity:1;transform:translate3d(0,0,0)}.fab-message b{display:block;font-family:"Playfair Display",serif}.fab-message small{color:var(--muted);font-weight:800}.drawer-prep{margin:-8px 0 12px;color:var(--muted);font-weight:900}.cart-meta .prep-line{color:var(--coffee)}
+@media(max-width:900px){.horizontal-products{grid-template-columns:repeat(2,minmax(0,1fr))}.location-card{grid-template-columns:1fr}.map-box,.map-box iframe{min-height:240px}}@media(max-width:760px){.badge-row{display:none}.horizontal-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.fab-message{display:none}.store-status{width:100%;margin-top:10px}.location-card{padding:12px;border-radius:24px}.recommend-list{display:grid;grid-template-columns:1fr 1fr}.recommend-list button{font-size:.78rem;padding:8px}}
+
 </style>
 </head>
 <body>
@@ -294,6 +299,23 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opa
   <button class="btn-" onclick="toggleCart()">Abrir carrinho</button>
  </div>
 </section>
+
+<section class="section smart-section" id="favoritos" aria-label="Seus favoritos">
+ <div class="section-head"><div><div class="section-kicker">Salvos por você</div><h2>❤️ Seus Favoritos</h2></div><p>Produtos marcados com coração ficam salvos mesmo depois de fechar o navegador.</p></div>
+ <div class="horizontal-products" id="favoritesGrid"></div>
+</section>
+<section class="section smart-section" id="recentes" aria-label="Produtos vistos recentemente">
+ <div class="section-head"><div><div class="section-kicker">Histórico</div><h2>Você viu recentemente</h2></div><p>Os últimos produtos abertos aparecem aqui, do mais recente para o mais antigo.</p></div>
+ <div class="horizontal-products" id="recentGrid"></div>
+</section>
+<section class="section" id="localizacao">
+ <div class="section-head"><div><div class="section-kicker">Visite a cafeteria</div><h2>Localização</h2></div><div class="store-status" id="storeStatus"><span>Verificando horário...</span><small>Aguarde um instante</small></div></div>
+ <div class="location-card">
+  <div><h3 style="font-family:'Playfair Display',serif;font-size:1.7rem;margin-bottom:8px">Prosa Banana & Café</h3><p style="color:var(--muted);font-weight:700;margin-bottom:8px">📍 R. Manoel Joaquim Garcia, 1229 - Centro, Itaí - SP, 18730-055</p><p style="color:var(--muted);font-weight:700;margin-bottom:16px">Cafés, bolos e doces para acompanhar sua pausa do dia.</p><a class="btn-primary" href="https://www.google.com/maps/search/?api=1&query=R.%20Manoel%20Joaquim%20Garcia%2C%201229%20-%20Centro%2C%20Ita%C3%AD%20-%20SP%2C%2018730-055" target="_blank" rel="noopener">📍 Como chegar</a></div>
+  <div class="map-box"><iframe title="Mapa da Prosa Banana & Café" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=R.%20Manoel%20Joaquim%20Garcia%2C%201229%20-%20Centro%2C%20Ita%C3%AD%20-%20SP%2C%2018730-055&output=embed"></iframe></div>
+ </div>
+</section>
+
 <section class="section" id="sobre">
  <div class="about">
   <div class="about-media"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&q=88" alt="Ambiente aconchegante de cafeteria"></div>
@@ -339,11 +361,13 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opa
   <div class="field"><label for="fulfillmentMethod">Como deseja receber o pedido?</label><select id="fulfillmentMethod" required aria-required="true" onchange="handleFulfillmentChange()"><option value="" selected disabled>Selecione como deseja receber seu pedido</option><option value="Entrega">Entrega</option><option value="Retirada no Local">Retirada no Local</option></select></div>
   <div class="field is-hidden" id="addressField"><label for="addressInput">Endereço de entrega</label><input id="addressInput" placeholder="Rua, número, bairro e referência" autocomplete="street-address" disabled></div>
   <div class="field"><label for="paymentMethod">Forma de Pagamento</label><select id="paymentMethod" required aria-required="true"><option value="" selected disabled>Selecione a forma de pagamento</option><option value="Pix">Pix</option><option value="Cartão de Crédito">Cartão de Crédito</option><option value="Cartão de Débito">Cartão de Débito</option></select></div>
+  <div class="field"><label for="orderNotes">Observações</label><textarea id="orderNotes" placeholder="Ex.: Sem açúcar, pouco gelo, mais chantilly, sem canela..."></textarea></div>
   <div class="total"><span>Total</span><b id="cartTotal">R$ 0,00</b></div>
   <button class="add-cart whatsapp" onclick="finalizarPedido()"><svg class="whatsapp-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32 101.5 32 1.9 131.6 1.9 254c0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.5-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.5-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> Enviar pedido pelo WhatsApp</button>
  </div>
 </aside>
-<a class="fab" href="https://wa.me/5515999999999" aria-label="WhatsApp"><svg class="whatsapp-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32 101.5 32 1.9 131.6 1.9 254c0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.5-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.5-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+<a class="fab" href="https://wa.me/5515999999999" aria-label="WhatsApp"><span class="fab-message"><b>Prosa Banana & Café</b><small>Cafés, bolos e doces para acompanhar sua pausa do dia.</small></span><svg class="whatsapp-icon" viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32 101.5 32 1.9 131.6 1.9 254c0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.5-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.5-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+<div class="confirmation" id="confirmationScreen" aria-hidden="true"><div class="confirmation-card"><div class="success-mark">✓</div><h2>Pedido enviado com sucesso!</h2><p>Obrigada pelo pedido. A Prosa Banana & Café recebeu sua mensagem pelo WhatsApp.</p><button class="btn-primary" onclick="backToMenu()">Voltar ao Cardápio</button></div></div>
 <div class="mobile-cart-bar" id="mobileCartBar"><div><strong id="mobileCartText">Carrinho vazio</strong><small id="mobileCartSub">Escolha seus produtos</small></div><button onclick="toggleCart()">Ver</button></div>
 <div class="toast" id="toast"></div>
 <script>
@@ -797,5 +821,333 @@ document.addEventListener("keydown", e => { if(e.key==="Escape"){ closeDrawer();
 handleFulfillmentChange();
 renderFilters(); renderFeatured(); renderMenu(); renderCart();
 </script>
+
+<script>
+/* ===== Extensões adicionadas sem remover a lógica original ===== */
+(function(){
+ const oldCardTemplate = window.cardTemplate;
+ const oldOpenDrawer = window.openDrawer;
+ const oldAdicionar = window.adicionar;
+ const oldRenderCart = window.renderCart;
+ const oldSalvar = window.salvar;
+ const oldFinalizar = window.finalizarPedido;
+ const cartKeyRef = window.cartKey;
+ const fmt = window.fmtPreco;
+ const get = (id)=>document.getElementById(id);
+ window.favoritos = JSON.parse(localStorage.getItem('prosa_favorites_v1') || '[]');
+ window.vistosRecentemente = JSON.parse(localStorage.getItem('prosa_recent_v1') || '[]');
+ window.lastRecommendationProductId = null;
+ window.BUSINESS_HOURS = {0:null,1:{open:'08:00',close:'19:00'},2:{open:'08:00',close:'19:00'},3:{open:'08:00',close:'19:00'},4:{open:'08:00',close:'19:00'},5:{open:'08:00',close:'19:00'},6:{open:'08:00',close:'14:00'}};
+ window.RECOMMENDATIONS = {1:[21,23,24],2:[21,22,26],6:[21,25,39],12:[21,24,38],39:[23,24,25],40:[21,35,37]};
+ PRODUTOS.forEach((p,i)=>{p.prepTime=p.prepTime||(p.cat==='cafe'?8:p.cat==='gelado'?10:p.cat==='combo'?14:p.cat==='festas'?45:12); if(!p.promo&&[1,6,21,39,40,46].includes(p.id)){p.promo=p.id===46?{type:'fixed',value:149.90,badges:['☕ Combo Deal']}:p.id===21?{type:'percent',value:10,badges:['🏷 10% OFF']}:p.id===1?{type:'percent',value:10,badges:['🔥 Best Seller','🏷 10% OFF']}:{type:'fixed',value:Math.max(1,p.preco-3),badges:['☕ Combo Deal']};} if(!p.promo&&i>PRODUTOS.length-4)p.promo={type:'percent',value:8,badges:['⭐ New']}; p.promoBadges=p.promo?.badges||[];});
+ window.promoPrice = p => !p.promo ? p.preco : (p.promo.type==='percent' ? +(p.preco*(1-p.promo.value/100)).toFixed(2) : p.promo.value);
+ window.basePrice = p => promoPrice(p);
+ window.hasPromo = p => promoPrice(p) < p.preco;
+ window.priceHtml = (p,extra=0)=>`<span class="price-stack">${hasPromo(p)?`<span class="old-price">${fmt(p.preco+extra)}</span>`:''}<span class="price ${hasPromo(p)?'promo-price':''}">${fmt(basePrice(p)+extra)}</span></span>`;
+ window.prepHtml = p => `<span class="prep-time">⏱ ${p.prepTime} min</span>`;
+ window.unitPriceForSelection = function(){return drawerProduct ? basePrice(drawerProduct) + selectedAddonsTotal() : 0;};
+ cardTemplate = window.cardTemplate = function(p,destaque=false){
+  const rating=averageRating(p), fav=favoritos.includes(p.id), badges=[destaque?'Destaque':catLabel(p.cat),...(p.promoBadges||[])].slice(0,3);
+  return `<article class="card" role="button" tabindex="0" onclick="openDrawer(${p.id})" onkeydown="if(event.key==='Enter')openDrawer(${p.id})"><button class="fav-btn ${fav?'active':''}" onclick="event.stopPropagation(); toggleFavorite(${p.id})" aria-label="${fav?'Remover dos favoritos':'Adicionar aos favoritos'}">${fav?'♥':'♡'}</button><div class="card-img-wrap"><img src="${p.img}" alt="${p.nome}" loading="lazy"><span class="card-badge">${destaque?'Destaque':catLabel(p.cat)}</span><div class="badge-row">${badges.map(b=>`<span class="promo-tag">${b}</span>`).join('')}</div></div><div class="card-body"><h3 class="card-title">${p.nome}</h3><div class="rating-row"><span>${stars(rating)}</span><span>${rating.toFixed(1)} · ${getReviews(p).length} avaliações</span></div><p class="ingredients">${p.ingredientes}</p><p class="nutrition">${nutriTexto(p)}</p><div class="card-footer">${priceHtml(p)}${prepHtml(p)}<button class="quick-add" onclick="event.stopPropagation(); openDrawer(${p.id})" aria-label="Personalizar ${p.nome}">+</button></div></div></article>`;
+ };
+ window.renderFavorites=function(){const grid=get('favoritesGrid'); if(!grid)return; const list=favoritos.map(id=>PRODUTOS.find(p=>p.id===id)).filter(Boolean); grid.innerHTML=list.length?list.map(p=>cardTemplate(p)).join(''):'<div class="smart-empty">Toque no coração de um produto para salvar seus favoritos aqui.</div>';};
+ window.renderRecent=function(){const grid=get('recentGrid'); if(!grid)return; const list=vistosRecentemente.map(id=>PRODUTOS.find(p=>p.id===id)).filter(Boolean); grid.innerHTML=list.length?list.map(p=>cardTemplate(p)).join(''):'<div class="smart-empty">Abra um produto para ele aparecer em “Você viu recentemente”.</div>';};
+ window.renderAllProducts=function(){renderFeatured();renderMenu();renderFavorites();renderRecent();};
+ window.toggleFavorite=function(id){favoritos=favoritos.includes(id)?favoritos.filter(x=>x!==id):[id,...favoritos]; localStorage.setItem('prosa_favorites_v1',JSON.stringify(favoritos)); renderAllProducts(); showToast(favoritos.includes(id)?'♥ Produto salvo nos favoritos':'♡ Produto removido dos favoritos');};
+ window.saveRecentlyViewed=function(id){vistosRecentemente=[id,...vistosRecentemente.filter(x=>x!==id)].slice(0,10); localStorage.setItem('prosa_recent_v1',JSON.stringify(vistosRecentemente)); renderRecent();};
+ openDrawer = window.openDrawer = function(id){oldOpenDrawer(id); const p=PRODUTOS.find(x=>x.id===id); if(!p)return; saveRecentlyViewed(id); get('drawerPrice').innerHTML=priceHtml(p); if(!get('drawerPrep')) get('drawerPrice').insertAdjacentHTML('afterend','<div class="drawer-prep" id="drawerPrep"></div>'); get('drawerPrep').textContent=`⏱ Pronto em ${p.prepTime} minutos`; updateDrawerButton();};
+ window.updateDrawerButton=function(){get('drawerQty').textContent=drawerQty; if(drawerProduct){get('drawerPrice').innerHTML=priceHtml(drawerProduct, selectedAddonsTotal()); get('drawerAddBtn').textContent=`Adicionar ao carrinho · ${fmt(unitPriceForSelection()*drawerQty)}`;}};
+ window.animateToCart=function(img){if(!img)return; const target=get('cartBtn')||document.querySelector('.cart-btn'); if(!target)return; const a=img.getBoundingClientRect(), b=target.getBoundingClientRect(), fly=img.cloneNode(true); fly.className='fly-img'; fly.style.left=a.left+'px'; fly.style.top=a.top+'px'; document.body.appendChild(fly); requestAnimationFrame(()=>{fly.style.transform=`translate(${b.left-a.left}px,${b.top-a.top}px) scale(.25)`; fly.style.opacity='.18';}); setTimeout(()=>fly.remove(),760);};
+ window.bounceCart=function(){document.querySelectorAll('.cart-btn,#mobileCartBar').forEach(el=>{el.classList.remove('cart-bounce'); void el.offsetWidth; el.classList.add('cart-bounce');});};
+ adicionar = window.adicionar = function(id,qtd=1,config=null){const p=PRODUTOS.find(x=>x.id===id); if(config&&!config.unitPrice)config.unitPrice=basePrice(p); lastRecommendationProductId=id; oldAdicionar(id,qtd,config); bounceCart(); renderCart();};
+ drawerAddToCart = window.drawerAddToCart = function(){ if(!drawerProduct||!validateDrawerSelection())return; animateToCart(get('drawerImg')); adicionar(drawerProduct.id, drawerQty, {variations:{...selectedVariations}, addons:selectedAddons.map(a=>({...a})), unitPrice:unitPriceForSelection()}); showToast(`✓ ${drawerQty}x ${drawerProduct.nome} adicionado`); closeDrawer(); toggleCart(true); };
+ window.itemMetaHtml=function(item){const lines=[`<span class="prep-line">⏱ Preparo estimado: ${item.prepTime||10} min</span>`,...variationLines(item),...addonLines(item).map(x=>`Adicional: ${x}`)]; return `<div class="cart-meta">${lines.map(l=>`<div>${l}</div>`).join('')}</div>`;};
+ window.recommendationHtml=function(){const ids=RECOMMENDATIONS[lastRecommendationProductId]||[]; const items=ids.map(id=>PRODUTOS.find(p=>p.id===id)).filter(Boolean).slice(0,4); if(!items.length)return ''; return `<div class="recommend-card"><strong>Combina com:</strong><div class="recommend-list">${items.map(p=>`<button onclick="openDrawer(${p.id})">☑ ${p.nome}</button>`).join('')}</div></div>`;};
+ renderCart = window.renderCart = function(){oldRenderCart(); const box=get('cartItems'); if(box&&carrinho.length) box.insertAdjacentHTML('beforeend', recommendationHtml()); document.querySelectorAll('.cart-item small').forEach((sm)=>{const name=sm.closest('.cart-item')?.querySelector('h4')?.textContent; const prod=carrinho.find(i=>i.nome===name); if(prod) sm.textContent=`${fmt(prod.unitPrice||basePrice(prod))} cada`;});};
+ window.saveCheckoutState=function(){localStorage.setItem('prosa_checkout_v1',JSON.stringify({fulfillment:get('fulfillmentMethod')?.value||'',address:get('addressInput')?.value||'',payment:get('paymentMethod')?.value||'',notes:get('orderNotes')?.value||''}));};
+ salvar = window.salvar = function(){oldSalvar(); saveCheckoutState();};
+ window.restoreCheckoutState=function(){const st=JSON.parse(localStorage.getItem('prosa_checkout_v1')||'{}'); if(st.fulfillment&&get('fulfillmentMethod'))get('fulfillmentMethod').value=st.fulfillment; if(st.address&&get('addressInput'))get('addressInput').value=st.address; if(st.payment&&get('paymentMethod'))get('paymentMethod').value=st.payment; if(st.notes&&get('orderNotes'))get('orderNotes').value=st.notes; handleFulfillmentChange();};
+ handleFulfillmentChange = window.handleFulfillmentChange = (function(orig){return function(){orig(); saveCheckoutState();};})(handleFulfillmentChange);
+ finalizarPedido = window.finalizarPedido = function(){ if(!carrinho.length){showToast('⚠️ Seu carrinho está vazio');return;} const fulfillment=get('fulfillmentMethod').value, addr=get('addressInput').value.trim(), payment=get('paymentMethod').value, notes=(get('orderNotes')?.value||'').trim(); if(!fulfillment){get('fulfillmentMethod').focus();showToast('⚠️ Por favor, selecione como deseja receber seu pedido.');return;} if(fulfillment==='Entrega'&&!addr){get('addressInput').focus();showToast('⚠️ Por favor, preencha o endereço de entrega antes de enviar o pedido.');return;} if(!payment){get('paymentMethod').focus();showToast('⚠️ Por favor, selecione a forma de pagamento antes de enviar o pedido.');return;} const itens=carrinho.map(p=>{const details=[`Preparo estimado: ${p.prepTime||10} min`,...variationLines(p),...addonLines(p).map(x=>`Adicional: ${x}`)]; return `• ${p.qtd} × ${p.nome} — ${fmt((p.unitPrice||basePrice(p))*p.qtd)}${details.length?'\n  '+details.join('\n  '):''}`;}).join('\n'); const recebimento=fulfillment==='Entrega'?`Entrega\n\nEndereço para entrega:\n${addr}`:'Retirada no Local'; const obs=notes?`\n\nObservações:\n${notes}`:''; const msg=`Olá Regiane! 👋\n\nGostaria de fazer o seguinte pedido:\n\n${itens}\n\nForma de receber:\n${recebimento}\n\nForma de pagamento:\n${payment}${obs}\n\nObrigado!`; window.open(`https://wa.me/5515999999999?text=${encodeURIComponent(msg)}`,'_blank','noopener'); showConfirmation(); };
+ window.showConfirmation=function(){const c=get('confirmationScreen'); if(c){c.classList.add('open'); c.setAttribute('aria-hidden','false');} carrinho=[]; localStorage.setItem('prosa_cart_v2','[]'); renderCart();};
+ window.backToMenu=function(){const c=get('confirmationScreen'); if(c){c.classList.remove('open'); c.setAttribute('aria-hidden','true');} document.querySelector('#cardapio').scrollIntoView({behavior:'smooth'});};
+ function minutes(t){const [h,m]=t.split(':').map(Number); return h*60+m;}
+ window.updateStoreStatus=function(){const el=get('storeStatus'); if(!el)return; const now=new Date(), day=now.getDay(), cur=now.getHours()*60+now.getMinutes(), h=BUSINESS_HOURS[day]; let main='🔴 Fechado', sub='Abrimos amanhã às 08h'; if(h&&cur>=minutes(h.open)&&cur<minutes(h.close)){main='🟢 Aberto agora'; sub=`Fecha às ${h.close.replace(':','h')}`;} else {for(let i=1;i<=7;i++){const d=(day+i)%7, nx=BUSINESS_HOURS[d]; if(nx){sub=`Abrimos ${i===1?'amanhã':'em breve'} às ${nx.open.replace(':','h')}`; break;}}} el.innerHTML=`<span>${main}</span><small>${sub}</small>`;};
+ ['fulfillmentMethod','addressInput','paymentMethod','orderNotes'].forEach(id=>{const el=get(id); if(el)el.addEventListener('input',saveCheckoutState); if(el)el.addEventListener('change',saveCheckoutState);});
+ restoreCheckoutState(); renderAllProducts(); renderCart(); updateStoreStatus(); setInterval(updateStoreStatus,60000);
+})();
+</script>
+
+
+<script>
+/* Correção de compatibilidade: garante que os cards do cardápio abram o produto mesmo após a mesclagem. */
+(function(){
+  function getProductIdFromCard(card){
+    if(!card) return null;
+    if(card.dataset && card.dataset.id) return Number(card.dataset.id);
+    const inline = card.getAttribute('onclick') || '';
+    const match = inline.match(/openDrawer\((\d+)\)/);
+    return match ? Number(match[1]) : null;
+  }
+  document.addEventListener('click', function(event){
+    const interactive = event.target.closest('button, a, input, select, textarea, label');
+    const card = event.target.closest('.card');
+    if(!card || interactive) return;
+    const id = getProductIdFromCard(card);
+    if(id && typeof openDrawer === 'function'){
+      event.preventDefault();
+      openDrawer(id);
+    }
+  }, true);
+  document.addEventListener('keydown', function(event){
+    if(event.key !== 'Enter' && event.key !== ' ') return;
+    const card = event.target.closest('.card');
+    if(!card) return;
+    const id = getProductIdFromCard(card);
+    if(id && typeof openDrawer === 'function'){
+      event.preventDefault();
+      openDrawer(id);
+    }
+  });
+})();
+</script>
+
+
+<script>
+/* ===== CORREÇÃO DEFINITIVA: abertura dos itens do cardápio ===== */
+(function(){
+  const $fix = (id) => document.getElementById(id);
+
+  function produtoPorId(id){
+    try { return PRODUTOS.find((p) => Number(p.id) === Number(id)); }
+    catch(e){ return null; }
+  }
+
+  function precoProduto(p){
+    try { return typeof basePrice === 'function' ? basePrice(p) : p.preco; }
+    catch(e){ return p.preco; }
+  }
+
+  function abrirItemCardapio(id){
+    const p = produtoPorId(id);
+    if(!p) return;
+
+    try { drawerProduct = p; } catch(e) {}
+    try { drawerQty = 1; } catch(e) {}
+    try { selectedVariations = {}; } catch(e) {}
+    try { selectedAddons = []; } catch(e) {}
+
+    const img = $fix('drawerImg');
+    if(img){ img.src = p.img; img.alt = p.nome || 'Produto'; }
+
+    const cat = $fix('drawerCat');
+    if(cat){
+      try { cat.textContent = typeof catLabel === 'function' ? catLabel(p.cat) : (p.cat || 'Produto'); }
+      catch(e){ cat.textContent = p.cat || 'Produto'; }
+    }
+
+    const nome = $fix('drawerName');
+    if(nome) nome.textContent = p.nome || '';
+
+    const preco = $fix('drawerPrice');
+    if(preco){
+      try { preco.innerHTML = typeof priceHtml === 'function' ? priceHtml(p) : (typeof fmtPreco === 'function' ? fmtPreco(precoProduto(p)) : `R$ ${precoProduto(p)}`); }
+      catch(e){ preco.textContent = typeof fmtPreco === 'function' ? fmtPreco(p.preco) : `R$ ${p.preco}`; }
+    }
+
+    const desc = $fix('drawerDesc');
+    if(desc) desc.textContent = p.desc || '';
+
+    const ing = $fix('drawerIngredients');
+    if(ing) ing.textContent = p.ingredientes || '';
+
+    const nutri = $fix('drawerNutri');
+    if(nutri){
+      try { nutri.innerHTML = typeof nutriHtml === 'function' ? nutriHtml(p) : ''; }
+      catch(e){ nutri.innerHTML = ''; }
+    }
+
+    try { if(typeof renderDrawerOptions === 'function') renderDrawerOptions(); } catch(e) {}
+    try { if(typeof renderDrawerReviews === 'function') renderDrawerReviews(p); } catch(e) {}
+    try { if(typeof saveRecentlyViewed === 'function') saveRecentlyViewed(Number(id)); } catch(e) {}
+
+    let prep = $fix('drawerPrep');
+    if(!prep && preco){
+      preco.insertAdjacentHTML('afterend','<div class="drawer-prep" id="drawerPrep"></div>');
+      prep = $fix('drawerPrep');
+    }
+    if(prep) prep.textContent = `⏱ Pronto em ${p.prepTime || 10} minutos`;
+
+    try { if(typeof window.updateDrawerButton === 'function') window.updateDrawerButton(); }
+    catch(e){
+      const q = $fix('drawerQty'); if(q) q.textContent = '1';
+      const btn = $fix('drawerAddBtn');
+      if(btn){
+        const valor = typeof fmtPreco === 'function' ? fmtPreco(precoProduto(p)) : `R$ ${precoProduto(p)}`;
+        btn.textContent = `Adicionar ao carrinho · ${valor}`;
+      }
+    }
+
+    const overlay = $fix('drawerOverlay');
+    const drawer = $fix('productDrawer');
+    if(overlay) overlay.classList.add('open');
+    if(drawer){ drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); }
+    document.body.classList.add('no-scroll');
+  }
+
+  window.openDrawer = abrirItemCardapio;
+  try { openDrawer = abrirItemCardapio; } catch(e) {}
+
+  function idDoCard(el){
+    const card = el && el.closest ? el.closest('.card') : null;
+    if(!card) return null;
+    if(card.dataset && card.dataset.id) return card.dataset.id;
+    const html = card.outerHTML || '';
+    const m = html.match(/openDrawer\((\d+)\)/);
+    return m ? m[1] : null;
+  }
+
+  document.addEventListener('click', function(ev){
+    const abrirBotao = ev.target.closest('.quick-add');
+    if(abrirBotao){
+      const id = idDoCard(abrirBotao);
+      if(id){ ev.preventDefault(); ev.stopPropagation(); abrirItemCardapio(id); }
+      return;
+    }
+
+    if(ev.target.closest('.fav-btn, a, input, select, textarea, label')) return;
+
+    const card = ev.target.closest('.card');
+    if(!card) return;
+    const id = idDoCard(card);
+    if(id){ ev.preventDefault(); ev.stopPropagation(); abrirItemCardapio(id); }
+  }, true);
+
+  document.addEventListener('keydown', function(ev){
+    if(ev.key !== 'Enter' && ev.key !== ' ') return;
+    const card = ev.target.closest('.card');
+    if(!card) return;
+    const id = idDoCard(card);
+    if(id){ ev.preventDefault(); abrirItemCardapio(id); }
+  }, true);
+})();
+</script>
+
+
+
+<style>
+/* ===== Correção final: favoritos, histórico, animação e endereço ===== */
+.card{cursor:pointer}.fav-btn{display:grid!important;place-items:center;line-height:1}.fav-btn.active{background:#F8DDE6!important;color:#b2274d!important}.drawer-prep{margin:-8px 0 14px;color:var(--muted);font-weight:900}.fly-img{position:fixed;z-index:99999;width:76px;height:76px;border-radius:18px;object-fit:cover;box-shadow:0 18px 42px rgba(44,26,14,.25);pointer-events:none;transition:transform .75s cubic-bezier(.16,.84,.28,1),opacity .75s ease}.cart-bounce{animation:cartBounceFinal .46s cubic-bezier(.2,.8,.2,1)}@keyframes cartBounceFinal{0%,100%{transform:scale(1)}35%{transform:scale(1.12)}65%{transform:scale(.96)}}
+.horizontal-products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.smart-empty{background:#fff;border:1px dashed var(--line);border-radius:24px;padding:24px;color:var(--muted);font-weight:800;text-align:center;grid-column:1/-1}.prep-time{color:var(--muted);font-size:.72rem;font-weight:900;white-space:nowrap}.price-stack{display:flex;flex-direction:column;gap:2px;line-height:1}.old-price{text-decoration:line-through;color:var(--soft);font:900 .76rem Quicksand,system-ui,sans-serif}.promo-price{color:var(--danger)!important}.badge-row{position:absolute;left:12px;bottom:12px;right:12px;display:flex;gap:6px;flex-wrap:wrap;z-index:3}.promo-tag{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:999px;padding:5px 8px;font-size:.66rem;font-weight:900;color:var(--espresso)}
+@media(max-width:1100px){.horizontal-products{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.horizontal-products{grid-template-columns:repeat(2,1fr);gap:12px}}
+</style>
+<script>
+/* ===== Correção final estável ===== */
+(function(){
+  const STORE_ADDRESS = 'R. Manoel Joaquim Garcia, 1229 - Centro, Itaí - SP, 18730-055';
+  const FAVORITES_KEY = 'prosa_favorites_v2';
+  const RECENT_KEY = 'prosa_recent_v2';
+  const $f = (id)=>document.getElementById(id);
+  const money = (v)=>Number(v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+  const cats = (typeof CATS !== 'undefined' ? CATS : []);
+  const produtos = (typeof PRODUTOS !== 'undefined' ? PRODUTOS : []);
+  const catName = (cat)=>{ try{return (cats.find(c=>c[0]===cat)||['',cat])[1]}catch(e){return cat||'Produto'} };
+  const starsSafe = (n=5)=>'★'.repeat(Math.round(n||5))+'☆'.repeat(Math.max(0,5-Math.round(n||5)));
+  let favoritosFinal = JSON.parse(localStorage.getItem(FAVORITES_KEY) || localStorage.getItem('prosa_favorites_v1') || '[]').map(Number);
+  let recentesFinal = JSON.parse(localStorage.getItem(RECENT_KEY) || localStorage.getItem('prosa_recent_v1') || '[]').map(Number);
+
+  produtos.forEach((p,i)=>{
+    p.prepTime = p.prepTime || (p.cat==='cafe'?8:p.cat==='gelado'?10:p.cat==='combo'?14:p.cat==='festas'?45:12);
+    if(!p.promo && [1,6,21,39,40,46].includes(Number(p.id))){
+      p.promo = Number(p.id)===46 ? {type:'fixed',value:149.90,badges:['☕ Combo Deal']} : Number(p.id)===1 ? {type:'percent',value:10,badges:['🔥 Best Seller','🏷 10% OFF']} : {type:'percent',value:8,badges:['🏷 Oferta']};
+    }
+    p.promoBadges = p.promoBadges || (p.promo && p.promo.badges) || [];
+  });
+  function promoPrice(p){ if(!p.promo) return Number(p.preco||0); return p.promo.type==='percent' ? +(p.preco*(1-p.promo.value/100)).toFixed(2) : Number(p.promo.value); }
+  function priceHtmlFinal(p){ const pp=promoPrice(p), old=Number(p.preco||0); return `<span class="price-stack">${pp<old?`<span class="old-price">${money(old)}</span>`:''}<span class="price ${pp<old?'promo-price':''}">${money(pp)}</span></span>`; }
+  function cardFinal(p,destaque=false){
+    const fav = favoritosFinal.includes(Number(p.id));
+    const badges = [destaque?'Destaque':catName(p.cat), ...(p.promoBadges||[])].slice(0,3);
+    return `<article class="card" data-id="${p.id}" role="button" tabindex="0" aria-label="Abrir ${p.nome}">
+      <button class="fav-btn ${fav?'active':''}" type="button" data-fav-id="${p.id}" aria-label="${fav?'Remover dos favoritos':'Adicionar aos favoritos'}">${fav?'♥':'♡'}</button>
+      <div class="card-img-wrap"><img src="${p.img}" alt="${p.nome}" loading="lazy"><span class="card-badge">${destaque?'Destaque':catName(p.cat)}</span><div class="badge-row">${badges.map(b=>`<span class="promo-tag">${b}</span>`).join('')}</div></div>
+      <div class="card-body"><h3 class="card-title">${p.nome}</h3><div class="rating-row"><span>${starsSafe(5)}</span><span>5.0 · avaliações</span></div><p class="ingredients">${p.ingredientes||p.desc||''}</p><p class="nutrition">${typeof nutriTexto==='function'?nutriTexto(p):''}</p><div class="card-footer">${priceHtmlFinal(p)}<span class="prep-time">⏱ ${p.prepTime} min</span><button class="quick-add" type="button" data-open-id="${p.id}" aria-label="Abrir ${p.nome}">+</button></div></div>
+    </article>`;
+  }
+  function saveFavs(){ localStorage.setItem(FAVORITES_KEY,JSON.stringify(favoritosFinal)); localStorage.setItem('prosa_favorites_v1',JSON.stringify(favoritosFinal)); }
+  function saveRecent(){ localStorage.setItem(RECENT_KEY,JSON.stringify(recentesFinal)); localStorage.setItem('prosa_recent_v1',JSON.stringify(recentesFinal)); }
+  function renderFavoritesFinal(){ const grid=$f('favoritesGrid'); if(!grid) return; const list=favoritosFinal.map(id=>produtos.find(p=>Number(p.id)===Number(id))).filter(Boolean); grid.innerHTML=list.length?list.map(p=>cardFinal(p)).join(''):'<div class="smart-empty">Toque no coração de um produto para salvar seus favoritos aqui.</div>'; }
+  function renderRecentFinal(){ const grid=$f('recentGrid'); if(!grid) return; const list=recentesFinal.map(id=>produtos.find(p=>Number(p.id)===Number(id))).filter(Boolean); grid.innerHTML=list.length?list.map(p=>cardFinal(p)).join(''):'<div class="smart-empty">Abra um produto para ele aparecer em “Você viu recentemente”.</div>'; }
+  function renderFeaturedFinal(){ const grid=$f('featuredGrid'); if(!grid) return; grid.innerHTML=produtos.slice(0,8).map(p=>cardFinal(p,true)).join(''); }
+  function currentFilter(){ try{return filtroAtual||'todos'}catch(e){return 'todos'} }
+  function currentSearch(){ const s=$f('searchInput'); return (s?s.value:'').toLowerCase().trim(); }
+  function renderMenuFinal(){ const grid=$f('menuGrid'); if(!grid) return; const f=currentFilter(), termo=currentSearch(); const list=produtos.filter(p=>(f==='todos'||p.cat===f) && (!termo || `${p.nome} ${p.ingredientes||''} ${p.desc||''} ${p.cat||''}`.toLowerCase().includes(termo))); grid.innerHTML=list.map(p=>cardFinal(p)).join(''); const empty=$f('emptyState'); if(empty) empty.style.display=list.length?'none':'block'; }
+  function renderAllFinal(){ renderFeaturedFinal(); renderMenuFinal(); renderFavoritesFinal(); renderRecentFinal(); }
+  window.toggleFavorite = function(id){ id=Number(id); favoritosFinal = favoritosFinal.includes(id) ? favoritosFinal.filter(x=>x!==id) : [id,...favoritosFinal]; saveFavs(); renderAllFinal(); if(typeof showToast==='function') showToast(favoritosFinal.includes(id)?'♥ Produto salvo nos favoritos':'♡ Produto removido dos favoritos'); };
+  window.saveRecentlyViewed = function(id){ id=Number(id); recentesFinal=[id,...recentesFinal.filter(x=>x!==id)].slice(0,10); saveRecent(); renderRecentFinal(); };
+
+  function openProductFinal(id){
+    const p=produtos.find(x=>Number(x.id)===Number(id)); if(!p) return;
+    try{drawerProduct=p; drawerQty=1; selectedVariations={}; selectedAddons=[];}catch(e){}
+    const setText=(id,t)=>{const el=$f(id); if(el) el.textContent=t||''};
+    const img=$f('drawerImg'); if(img){img.src=p.img; img.alt=p.nome;}
+    setText('drawerCat',catName(p.cat)); setText('drawerName',p.nome); setText('drawerDesc',p.desc); setText('drawerIngredients',p.ingredientes);
+    const price=$f('drawerPrice'); if(price) price.innerHTML=priceHtmlFinal(p);
+    let prep=$f('drawerPrep'); if(!prep && price){ price.insertAdjacentHTML('afterend','<div class="drawer-prep" id="drawerPrep"></div>'); prep=$f('drawerPrep'); }
+    if(prep) prep.textContent=`⏱ Pronto em ${p.prepTime} minutos`;
+    const nut=$f('drawerNutri'); if(nut){ try{nut.innerHTML=typeof nutriHtml==='function'?nutriHtml(p):'';}catch(e){nut.innerHTML='';} }
+    try{ if(typeof renderDrawerOptions==='function') renderDrawerOptions(); }catch(e){}
+    try{ if(typeof renderDrawerReviews==='function') renderDrawerReviews(p); }catch(e){}
+    const q=$f('drawerQty'); if(q) q.textContent='1';
+    const btn=$f('drawerAddBtn'); if(btn) btn.textContent=`Adicionar ao carrinho · ${money(promoPrice(p))}`;
+    window.saveRecentlyViewed(id);
+    const ov=$f('drawerOverlay'), dr=$f('productDrawer'); if(ov) ov.classList.add('open'); if(dr){dr.classList.add('open'); dr.setAttribute('aria-hidden','false');} document.body.classList.add('no-scroll');
+  }
+  window.openDrawer=openProductFinal; try{openDrawer=openProductFinal;}catch(e){}
+
+  window.unitPriceForSelection=function(){ try{return drawerProduct ? promoPrice(drawerProduct) + (typeof selectedAddonsTotal==='function'?selectedAddonsTotal():0) : 0;}catch(e){return drawerProduct?promoPrice(drawerProduct):0;} };
+  window.updateDrawerButton=function(){ const q=$f('drawerQty'); if(q) q.textContent=drawerQty||1; if(drawerProduct){ const extra=(typeof selectedAddonsTotal==='function'?selectedAddonsTotal():0); const price=$f('drawerPrice'); if(price) price.innerHTML=`<span class="price ${promoPrice(drawerProduct)<drawerProduct.preco?'promo-price':''}">${money(promoPrice(drawerProduct)+extra)}</span>`; const b=$f('drawerAddBtn'); if(b) b.textContent=`Adicionar ao carrinho · ${money((promoPrice(drawerProduct)+extra)*(drawerQty||1))}`; }};
+  try{updateDrawerButton=window.updateDrawerButton;}catch(e){}
+
+  function cartKeyFinal(item){ try{return typeof cartKey==='function'?cartKey(item):`${item.id}__${JSON.stringify(item.variations||{})}__${(item.addons||[]).map(a=>a.id).join('|')}`;}catch(e){return `${item.id}`;} }
+  function animateToCartFinal(source){ const img = source || $f('drawerImg'); const target=$f('cartBtn')||document.querySelector('.cart-btn')||$f('mobileCartBar'); if(!img||!target) return; const a=img.getBoundingClientRect(), b=target.getBoundingClientRect(); const fly=img.cloneNode(true); fly.className='fly-img'; fly.style.left=a.left+'px'; fly.style.top=a.top+'px'; document.body.appendChild(fly); requestAnimationFrame(()=>{fly.style.transform=`translate(${b.left-a.left}px,${b.top-a.top}px) scale(.22)`; fly.style.opacity='.15';}); setTimeout(()=>fly.remove(),780); }
+  function bounceCartFinal(){ document.querySelectorAll('.cart-btn,#mobileCartBar').forEach(el=>{el.classList.remove('cart-bounce'); void el.offsetWidth; el.classList.add('cart-bounce');}); }
+  window.animateToCart=animateToCartFinal;
+  window.adicionar=function(id,qtd=1,config=null){ const p=produtos.find(x=>Number(x.id)===Number(id)); if(!p) return; const unit=(config&&config.unitPrice)||promoPrice(p); const newItem={...p,qtd,variations:(config&&config.variations)||{},addons:(config&&config.addons)||[],unitPrice:unit,prepTime:p.prepTime}; const key=cartKeyFinal(newItem); const existing=carrinho.find(x=>cartKeyFinal(x)===key); if(existing) existing.qtd+=qtd; else carrinho.push(newItem); try{salvar();}catch(e){localStorage.setItem('prosa_cart_v2',JSON.stringify(carrinho));} if(typeof renderCart==='function') renderCart(); bounceCartFinal(); if(typeof showToast==='function') showToast(`✓ ${p.nome} no carrinho`); };
+  try{adicionar=window.adicionar;}catch(e){}
+  window.drawerAddToCart=function(){ if(!drawerProduct) return; try{ if(typeof validateDrawerSelection==='function' && !validateDrawerSelection()) return; }catch(e){} animateToCartFinal($f('drawerImg')); const cfg={variations:{},addons:[],unitPrice:window.unitPriceForSelection()}; try{cfg.variations={...selectedVariations}; cfg.addons=(selectedAddons||[]).map(a=>({...a}));}catch(e){} window.adicionar(drawerProduct.id,drawerQty||1,cfg); try{closeDrawer();}catch(e){} try{toggleCart(true);}catch(e){} };
+  try{drawerAddToCart=window.drawerAddToCart;}catch(e){}
+
+  const oldRenderCartFinal=window.renderCart||renderCart;
+  window.renderCart=function(){ try{oldRenderCartFinal();}catch(e){} document.querySelectorAll('.cart-item small').forEach(sm=>{ const name=sm.closest('.cart-item')?.querySelector('h4')?.textContent; const it=carrinho.find(x=>x.nome===name); if(it) sm.textContent=`${money(it.unitPrice||promoPrice(it))} cada`; }); };
+  try{renderCart=window.renderCart;}catch(e){}
+
+  window.finalizarPedido=function(){
+    if(!carrinho.length){ if(typeof showToast==='function') showToast('⚠️ Seu carrinho está vazio'); return; }
+    const fulfillment=$f('fulfillmentMethod')?.value||'', addr=($f('addressInput')?.value||'').trim(), payment=$f('paymentMethod')?.value||'', notes=($f('orderNotes')?.value||'').trim();
+    if(!fulfillment){$f('fulfillmentMethod')?.focus(); if(typeof showToast==='function') showToast('⚠️ Selecione como deseja receber o pedido.'); return;}
+    if(fulfillment==='Entrega'&&!addr){$f('addressInput')?.focus(); if(typeof showToast==='function') showToast('⚠️ Preencha o endereço de entrega.'); return;}
+    if(!payment){$f('paymentMethod')?.focus(); if(typeof showToast==='function') showToast('⚠️ Selecione a forma de pagamento.'); return;}
+    const itens=carrinho.map(p=>`• ${p.qtd} × ${p.nome} — ${money((p.unitPrice||promoPrice(p))*p.qtd)}\n  Preparo estimado: ${p.prepTime||10} min`).join('\n');
+    const recebimento=fulfillment==='Entrega'?`Entrega\n\nEndereço para entrega:\n${addr}`:`Retirada no Local\n\nEndereço da cafeteria:\n${STORE_ADDRESS}`;
+    const obs=notes?`\n\nObservações:\n${notes}`:'';
+    const msg=`Olá Regiane! 👋\n\nGostaria de fazer o seguinte pedido:\n\n${itens}\n\nForma de receber:\n${recebimento}\n\nForma de pagamento:\n${payment}${obs}\n\nObrigado!`;
+    window.open(`https://wa.me/5515999999999?text=${encodeURIComponent(msg)}`,'_blank','noopener');
+    try{ if(typeof showConfirmation==='function') showConfirmation(); }catch(e){}
+  };
+  try{finalizarPedido=window.finalizarPedido;}catch(e){}
+
+  document.addEventListener('click',function(ev){
+    const fav=ev.target.closest('[data-fav-id]'); if(fav){ev.preventDefault();ev.stopPropagation();window.toggleFavorite(fav.dataset.favId);return;}
+    const open=ev.target.closest('[data-open-id]'); if(open){ev.preventDefault();ev.stopPropagation();openProductFinal(open.dataset.openId);return;}
+    if(ev.target.closest('button,a,input,select,textarea,label')) return;
+    const card=ev.target.closest('.card[data-id]'); if(card){ev.preventDefault();openProductFinal(card.dataset.id);}
+  },true);
+  document.addEventListener('keydown',function(ev){ if(ev.key!=='Enter'&&ev.key!==' ') return; const card=ev.target.closest('.card[data-id]'); if(card){ev.preventDefault();openProductFinal(card.dataset.id);} },true);
+  const s=$f('searchInput'); if(s) s.addEventListener('input',()=>setTimeout(renderMenuFinal,0));
+  setTimeout(()=>{ renderAllFinal(); try{window.renderCart();}catch(e){} },0);
+})();
+</script>
+
 </body>
 </html>
