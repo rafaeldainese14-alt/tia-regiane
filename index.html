@@ -453,74 +453,78 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opa
 <div class="toast" id="toast"></div>
 <script>
 const PRODUTOS = [
- { id:1, nome:"Espresso",        preco:8.90, cat:"cafe",   img:"https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&q=85",
+ { id:1, nome:"Espresso",        preco:7.78, cat:"cafe",   img:"https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&q=85",
    desc:"Nosso espresso clássico extraído com precisão milimétrica. Encorpado, intenso e com crema dourada que revela a qualidade dos nossos grãos 100% arábica.",
-   ingredientes:"Café arábica especial torrado artesanalmente, água filtrada.",
+   ingredientes:"Café especial torrado artesanalmente, água filtrada.",
    nutri:{cal:5, carb:1, prot:0, fat:0} },
- { id:2, nome:"Espresso Duplo",     preco:10.90, cat:"cafe",   img:"https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&q=85",
+ { id:2, nome:"Espresso Duplo",     preco:12.00, cat:"cafe",   img:"https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&q=85",
    desc:"A dose dupla do nosso espresso para quem precisa de mais energia. Aroma intenso com notas de caramelo e chocolate amargo.",
-   ingredientes:"Café arábica especial (dose dupla), água filtrada.",
+   ingredientes:"Café especial (dose dupla), água filtrada.",
    nutri:{cal:10, carb:2, prot:0, fat:0} },
- { id:3, nome:"Café Coado",       preco:9.90, cat:"cafe",   img:"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=85",
-   desc:"Preparado com filtro de papel e grãos moídos na hora. Um café simples e perfeito que te leva de volta às raízes.",
-   ingredientes:"Café arábica moído na hora, água filtrada quente.",
+ { id:3, nome:"Café Carioca",       preco:7.00, cat:"cafe",   img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHMRff1rKinihn9w6EvpPdSNIp0qYCpVFZrH7zvrWmUcXZdSDIXWid_Cs&s=10",
+   desc:"Ele é feito extraindo um expresso curto e completando a xícara com um pouco mais de água quente . Isso deixa o sabor muito mais suave, leve e diluído do que o expresso tradicional",
+   ingredientes:"Café especial extraindo na hora, água filtrada quente.",
    nutri:{cal:5, carb:1, prot:0, fat:0} },
- { id:4, nome:"Cappuccino",       preco:14.90, cat:"cafe",   img:"https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=85",
+ { id:4, nome:"Cappuccino",       preco:16.00, cat:"cafe",   img:"https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=85",
    desc:"Espresso equilibrado com leite vaporizado e uma camada generosa de espuma sedosa. Uma xícara que abraça.",
    ingredientes:"Espresso, leite integral vaporizado, espuma de leite.",
    nutri:{cal:120, carb:10, prot:6, fat:5} },
- { id:5, nome:"Latte",          preco:13.90, cat:"cafe",   img:"https://images.unsplash.com/photo-1561047029-3000c68339ca?w=600&q=85",
+ { id:5, nome:"Latte",          preco:13.00, cat:"cafe",   img:"https://images.unsplash.com/photo-1561047029-3000c68339ca?w=600&q=85",
    desc:"Espresso suave coberto com muito leite vaporizado cremoso. O café perfeito para quem aprecia leveza e conforto.",
    ingredientes:"Espresso, leite integral vaporizado, leve camada de espuma.",
    nutri:{cal:150, carb:12, prot:8, fat:6} },
- { id:6, nome:"Banana Latte",      preco:16.90, cat:"cafe",   img:"https://images.unsplash.com/photo-1585494156145-1c60a4fe952b?w=600&q=85",
-   desc:"Nossa criação exclusiva: espresso com leite vaporizado e banana caramelizada artesanalmente. A assinatura da casa.",
-   ingredientes:"Espresso, leite integral, banana caramelizada artesanal, calda de caramelo.",
+ { id:6, nome:"Shakerato",      preco:19.00, cat:"cafe",   img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD835ca1nqnlcJwWxBeP957vrsJEMvSFtPK90vEBcAKPZDxC8_PEnv6Qs&s=10",
+   desc:"é uma clássica e refrescante bebida italiana de verão, originária de Milão. Ela consiste em um café espresso batido vigorosamente com gelo e uma base de açúcar, resultando em uma bebida gelada, com consistência aveludada e uma espuma cremosa no topo",
+   ingredientes:" café espresso, açúcar e bastante gelo.",
    nutri:{cal:210, carb:28, prot:7, fat:6} },
- { id:7, nome:"Mocha",          preco:17.90, cat:"cafe",   img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=85",
-   desc:"A combinação perfeita de espresso com chocolate belga e leite vaporizado. Rico, intenso e irresistível.",
-   ingredientes:"Espresso, chocolate belga 70%, leite integral vaporizado, chantilly.",
+ { id:7, nome:"Affogato",          preco:16.00, cat:"cafe",   img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpiRVT9VZcOdb-119fipHbGBjzPxDzujWpOoQH4lRpxEXmcQLA74e4xURL&s=10",
+   desc:"É servido em uma taça com uma bola de sorvete de baunilha acompanhado de uma dose quente de café expresso.",
+   ingredientes:"uma dose de café expresso quente e uma bola de sorvete de baunilha (ou creme)",
    nutri:{cal:280, carb:32, prot:8, fat:12} },
- { id:8, nome:"Macchiato",        preco:12.90, cat:"cafe",   img:"https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=85",
+ { id:8, nome:"Macchiato",        preco:9.00, cat:"cafe",   img:"https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=85",
    desc:"Espresso \"manchado\" com uma pitada de leite vaporizado. Para quem quer intensidade com um toque de suavidade.",
    ingredientes:"Espresso, leite vaporizado (pequena quantidade).",
    nutri:{cal:20, carb:2, prot:1, fat:1} },
- { id:9, nome:"Cold Brew",        preco:14.90, cat:"cafe",   img:"https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=600&q=85",
-   desc:"Café extraído a frio por 18 horas. Resultado: uma bebida com baixa acidez, sabor aveludado e cafeína potente.",
-   ingredientes:"Café arábica de extração a frio (18h), água filtrada gelada.",
+ { id:9, nome:"Mix Tea",        preco:18.00, cat:"cafe",   img:"https://static.itdg.com.br/images/640-400/417fca71bcf80f8929f6a6dd35187c40/cha-gelado.jpg",
+   desc:"chá adoçado,gelado, acompanhado com limão,Morango ou lichia, servido com gelo. Refrescante, suave e perfeito para o verão.",
+   ingredientes:"Chá gelado.",
    nutri:{cal:10, carb:2, prot:0, fat:0} },
- { id:10, nome:"Cappuccino Italiano",   preco:15.90, cat:"cafe",   img:"https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=85",
+ { id:10, nome:"Cappuccino Italiano",   preco:14.00, cat:"cafe",   img:"http://app.cardapiodigital.net/dnizcafeebistro/5711-large_default/italiano-tradicional-.jpg",
    desc:"Receita tradicional italiana com proporção exata de espresso, leite e espuma. Finalizado com cacau em pó.",
    ingredientes:"Espresso duplo, leite integral, espuma de leite densa, cacau em pó.",
    nutri:{cal:130, carb:11, prot:7, fat:5} },
- { id:11, nome:"Iced Latte",       preco:15.90, cat:"gelado",  img:"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=85",
-   desc:"Espresso derramado sobre gelo e leite frio. Refrescante, suave e perfeito para o verão.",
-   ingredientes:"Espresso, leite integral gelado, gelo.",
+ { id:11, nome:"Refrigerante",       preco:7.50, cat:"gelado",  img:"https://app.cardapiodigital.net/kipasteldaliberdade/1248-large_default/refrigerantes.jpg",
+   desc:"Perfeito para o verão.",
+   ingredientes:"Refrigerante de sua escolha, gelo.",
    nutri:{cal:140, carb:12, prot:7, fat:5} },
- { id:12, nome:"Frappuccino Banana",   preco:19.90, cat:"gelado",  img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=85",
-   desc:"Mistura cremosa de café gelado com banana, leite e gelo. Um milk-shake para verdadeiros apreciadores.",
-   ingredientes:"Café, banana madura, leite integral, gelo, chantilly, calda de caramelo.",
+ { id:12, nome:"Sucos Del'Valle",   preco:7.50, cat:"gelado",  img:"http://coca-cola.com/content/dam/onexp/br/pt/brands/del-valle/finals/nectar/brazil_del_valle_nectar_desktop_1440x810.jpg",
+   desc:"Sucos de frutas refrescantes, perfeitos para qualquer hora do dia. Disponíveis em diversos sabores.",
+   ingredientes:"Sucos Del valle.",
    nutri:{cal:320, carb:42, prot:8, fat:12} },
- { id:13, nome:"Frappuccino Caramelo",  preco:19.90, cat:"gelado",  img:"https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=85",
+  { id:12, nome:"Sucos naturais",   preco:7.50, cat:"gelado",  img:"http://coca-cola.com/content/dam/onexp/br/pt/brands/del-valle/finals/nectar/brazil_del_valle_nectar_desktop_1440x810.jpg",
+   desc:"Sucos de frutas naturais feitos na hora, com sabores variados e frescos de morango, maracujá, limão, abacaxi com hortelã ou somente abacaxi. Uma explosão de sabor e vitaminas em cada gole.",
+   ingredientes:"Sucos de diversos sabores.",
+   nutri:{cal:320, carb:42, prot:8, fat:12} },
+ { id:13, nome:"Frappuccino",  preco:21.00, cat:"gelado",  img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBqVP21SGUecUVhRxCnYLa6Q8t9lTbfVhpUP_UhAh8oVo6a3FDkOBL03Zi&s=10",
    desc:"Café gelado batido com calda de caramelo artesanal e leite cremoso. Coberto com chantilly e fio de caramelo.",
    ingredientes:"Café, calda de caramelo artesanal, leite integral, gelo, chantilly.",
    nutri:{cal:350, carb:48, prot:7, fat:13} },
- { id:14, nome:"Iced Coffee",       preco:13.90, cat:"gelado",  img:"https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=600&q=85",
-   desc:"Café coado resfriado lentamente e servido com gelo. Simples, honesto e delicioso.",
-   ingredientes:"Café coado especial, gelo filtrado.",
+ { id:14, nome:"Soda Italiana",       preco:13.90, cat:"gelado",  img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2xP8SBJLWLqVfxL1DLTtn5qH8iIktFE9wyMh_mrItdHb_liZLNmRcjaQ&s=10",
+   desc:"Refrescante e levemente adocicada, feita com água com gás e xarope de morango, maçã verde ou limão siciliano. Uma explosão de sabor em cada gole.",
+   ingredientes:"soda italiana (água com gás e xarope de sua escolha), gelo.",
    nutri:{cal:8, carb:1, prot:0, fat:0} },
- { id:15, nome:"Café Gelado",       preco:12.90, cat:"gelado",  img:"https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&q=85",
-   desc:"Espresso resfriado e servido sobre gelo. Concentrado e revigorante.",
-   ingredientes:"Espresso, gelo filtrado.",
-   nutri:{cal:10, carb:1, prot:0, fat:0} },
- { id:16, nome:"Chocolate Quente",    preco:14.90, cat:"chocolate", img:"https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=600&q=85",
+ { id:16, nome:"Chocolate Quente",    preco:16.00, cat:"chocolate", img:"https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=600&q=85",
    desc:"Chocolate artesanal derretido com leite quente e uma pitada de canela. Conforto em cada gole.",
    ingredientes:"Chocolate 70% cacau, leite integral, canela, açúcar mascavo.",
    nutri:{cal:280, carb:34, prot:8, fat:12} },
- { id:17, nome:"Chocolate Belga",     preco:16.90, cat:"chocolate", img:"https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&q=85",
-   desc:"Chocolate belga preparado com leite vaporizado. Cremoso, rico e feito para tomar sem pressa.",
-   ingredientes:"Chocolate belga importado, leite integral vaporizado, chantilly.",
-   nutri:{cal:310, carb:38, prot:9, fat:14} },
+  { id:16, nome:"Chocolate Quente Branco",    preco:16.00, cat:"chocolate", img:"https://img.band.com.br/image/2023/05/29/como-fazer-chocolate-quente-branco-11752.jpg",
+   desc:"Chocolate branco artesanal derretido com leite quente e uma pitada de canela. Conforto em cada gole.",
+   ingredientes:"Chocolate branco, leite integral, canela, açúcar mascavo.",
+   nutri:{cal:280, carb:34, prot:8, fat:12} },
+ { id:17, nome:"Água",     preco:16.90, cat:"gelado", img:"https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&q=85",
+   desc:"Água mineral natural com gás ou sem gás, perfeita para hidratação e refrescamento.",
+   ingredientes:"Água mineral natural com gás ou sem gás.",
+   nutri:{cal:0, carb:0, prot:0, fat:0} },
  { id:18, nome:"Chocolate Branco",    preco:15.90, cat:"chocolate", img:"https://images.unsplash.com/photo-1526081347589-7b3e074b5107?w=600&q=85",
    desc:"Suave e adocicado, feito com chocolate branco de alta qualidade e leite cremoso.",
    ingredientes:"Chocolate branco, leite integral, creme de leite.",
@@ -1096,7 +1100,7 @@ renderFilters(); renderFeatured(); renderMenu(); renderCart();
       return;
     }
 
-    if(ev.target.closest('.fav-btn, a, input, select, textarea, label')) return;
+    if(ev.target.closest('[data-remove-recent], .fav-btn, button, a, input, select, textarea, label')) return;
 
     const card = ev.target.closest('.card');
     if(!card) return;
@@ -1227,6 +1231,736 @@ renderFilters(); renderFeatured(); renderMenu(); renderCart();
   document.addEventListener('keydown',function(ev){ if(ev.key!=='Enter'&&ev.key!==' ') return; const card=ev.target.closest('.card[data-id]'); if(card){ev.preventDefault();openProductFinal(card.dataset.id);} },true);
   const s=$f('searchInput'); if(s) s.addEventListener('input',()=>setTimeout(renderMenuFinal,0));
   setTimeout(()=>{ renderAllFinal(); try{window.renderCart();}catch(e){} },0);
+})();
+</script>
+
+
+<style>
+/* ===== Melhorias: opções obrigatórias, histórico removível e filtros estáveis ===== */
+.custom-required-select{
+  width:100%;
+  min-height:46px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background-color:var(--cream);
+  padding:0 42px 0 13px;
+  outline:0;
+  font-weight:800;
+  margin-top:6px;
+  color:var(--espresso);
+  appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--coffee) 50%),linear-gradient(135deg,var(--coffee) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 20px,calc(100% - 14px) 20px;
+  background-size:6px 6px,6px 6px;
+  background-repeat:no-repeat;
+}
+.custom-required-select:invalid{color:var(--muted)}
+.product-note,.drawer-note{
+  margin-top:8px;
+  background:#fff7ec;
+  border:1px solid rgba(200,146,58,.28);
+  border-radius:14px;
+  padding:9px 11px;
+  color:var(--coffee);
+  font-size:.76rem;
+  font-weight:850;
+  line-height:1.35;
+}
+.drawer-note{font-size:.88rem;margin:12px 0 4px}
+.recent-remove-btn{
+  position:absolute;
+  top:12px;
+  right:56px;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:rgba(255,255,255,.96);
+  border:1px solid var(--line);
+  box-shadow:0 8px 20px rgba(44,26,14,.12);
+  color:var(--danger);
+  z-index:5;
+  font-weight:900;
+  transition:transform var(--ease),background var(--ease);
+}
+.recent-remove-btn:hover{transform:scale(1.08);background:#fff}
+@media(max-width:760px){
+  .recent-remove-btn{right:50px;width:36px;height:36px}
+  .custom-required-select{font-size:.92rem}
+}
+</style>
+<script>
+/* ===== Patch final: personalização de bebidas, histórico com X e filtros corrigidos ===== */
+(function(){
+  const $ = (id)=>document.getElementById(id);
+  const money = (v)=>Number(v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+  const produtos = (typeof PRODUTOS !== 'undefined') ? PRODUTOS : [];
+  const RECENT_KEYS = ['prosa_recent_v2','prosa_recent_v1'];
+
+  /* Corrige IDs duplicados para que Sucos Del'Valle e Sucos naturais sejam produtos independentes. */
+  (function fixDuplicateJuiceIds(){
+    const naturais = produtos.find(p => /sucos?\s+naturais/i.test(p.nome || ''));
+    if(naturais && Number(naturais.id) === 12) naturais.id = 12012;
+  })();
+
+  const CUSTOM_BY_NAME = [
+    { test:/mix\s*tea/i, variationId:'sabor', label:'Sabor do Mix Tea', placeholder:'Selecione um sabor', options:['Limão','Morango','Lichia'] },
+    { test:/refrigerante/i, variationId:'refrigerante', label:'Refrigerante', placeholder:'Selecione um refrigerante', options:['Coca-Cola','Sprite','Pepsi','Fanta'] },
+    { test:/del[’']?valle/i, fixedNote:true, note:'O sabor será escolhido presencialmente no estabelecimento.', cartLabel:'Sabor', cartValue:'Escolhido no estabelecimento.' },
+    { test:/soda\s+italiana/i, variationId:'sabor', label:'Sabor da Soda Italiana', placeholder:'Selecione um sabor', options:['Xarope de Morango','Maçã Verde','Limão Siciliano'] },
+    { test:/sucos?\s+naturais/i, variationId:'sabor', label:'Sabor do Suco Natural', placeholder:'Selecione um sabor', options:['Morango','Maracujá','Limão','Abacaxi com Hortelã','Abacaxi'] },
+    { test:/^água$|^agua$/i, variationId:'tipo', label:'Tipo de Água', placeholder:'Selecione uma opção', options:['Com gás','Sem gás'] }
+  ];
+
+  function customForProduct(p){
+    return CUSTOM_BY_NAME.find(rule => rule.test.test(p && p.nome || '')) || null;
+  }
+
+  function productById(id){
+    return produtos.find(p => Number(p.id) === Number(id));
+  }
+
+  function basePrice(p){
+    if(!p) return 0;
+    if(p.promo){
+      return p.promo.type === 'percent' ? +(p.preco * (1 - p.promo.value / 100)).toFixed(2) : Number(p.promo.value);
+    }
+    return Number(p.preco || 0);
+  }
+
+  function catLabelSafe(cat){
+    try{
+      const item = CATS.find(c => c[0] === cat);
+      return item ? item[1] : (cat || 'Produto');
+    }catch(e){ return cat || 'Produto'; }
+  }
+
+  function nutriSafe(p){
+    try{ return typeof nutriTexto === 'function' ? nutriTexto(p) : ''; }
+    catch(e){ return ''; }
+  }
+
+  function priceHtml(p){
+    const promo = basePrice(p);
+    const old = Number(p.preco || 0);
+    return `<span class="price-stack">${promo < old ? `<span class="old-price">${money(old)}</span>` : ''}<span class="price ${promo < old ? 'promo-price' : ''}">${money(promo)}</span></span>`;
+  }
+
+  function cardHtml(p, destaque=false, recent=false){
+    const c = customForProduct(p);
+    const note = c && c.fixedNote ? `<div class="product-note">Sabor: escolhido no estabelecimento.</div>` : '';
+    const remove = recent ? `<button class="recent-remove-btn" type="button" data-remove-recent="${p.id}" aria-label="Remover do histórico">×</button>` : '';
+    return `<article class="card" data-id="${p.id}" role="button" tabindex="0" aria-label="Abrir ${p.nome}">
+      ${remove}<button class="fav-btn" type="button" data-fav-id="${p.id}" aria-label="Favoritar">♡</button>
+      <div class="card-img-wrap"><img src="${p.img}" alt="${p.nome}" loading="lazy"><span class="card-badge">${destaque ? 'Destaque' : catLabelSafe(p.cat)}</span></div>
+      <div class="card-body"><h3 class="card-title">${p.nome}</h3><p class="ingredients">${p.ingredientes || p.desc || ''}</p>${note}<p class="nutrition">${nutriSafe(p)}</p>
+      <div class="card-footer">${priceHtml(p)}<span class="prep-time">⏱ ${p.prepTime || 10} min</span><button class="quick-add" type="button" data-open-id="${p.id}" aria-label="Personalizar ${p.nome}">+</button></div></div>
+    </article>`;
+  }
+
+  function readRecent(){
+    for(const key of RECENT_KEYS){
+      try{
+        const list = JSON.parse(localStorage.getItem(key) || '[]').map(Number).filter(Boolean);
+        if(list.length) return list;
+      }catch(e){}
+    }
+    return [];
+  }
+
+  function writeRecent(list){
+    RECENT_KEYS.forEach(key => localStorage.setItem(key, JSON.stringify(list)));
+  }
+
+  function renderRecentWithRemove(){
+    const grid = $('recentGrid');
+    if(!grid) return;
+    const ids = readRecent();
+    const list = ids.map(productById).filter(Boolean);
+    grid.innerHTML = list.length ? list.map(p => cardHtml(p,false,true)).join('') : '<div class="smart-empty">Abra um produto para ele aparecer em “Você viu recentemente”.</div>';
+  }
+
+  function removeRecentItem(id){
+    const next = readRecent().filter(x => Number(x) !== Number(id));
+    writeRecent(next);
+    renderRecentWithRemove();
+    if(typeof showToast === 'function') showToast('× Item removido do histórico');
+  }
+
+  function renderMenuStable(){
+    const grid = $('menuGrid');
+    if(!grid) return;
+    let filter = 'todos';
+    try{ filter = filtroAtual || 'todos'; }catch(e){}
+    const term = (($('searchInput') && $('searchInput').value) || '').trim().toLowerCase();
+    const list = produtos.filter(p => {
+      const byCat = filter === 'todos' || p.cat === filter;
+      const hay = `${p.nome || ''} ${p.ingredientes || ''} ${p.desc || ''} ${p.cat || ''}`.toLowerCase();
+      return byCat && (!term || hay.includes(term));
+    });
+    grid.innerHTML = list.map(p => cardHtml(p,false,false)).join('');
+    const empty = $('emptyState');
+    if(empty) empty.style.display = list.length ? 'none' : 'block';
+    document.querySelectorAll('#filters .filter').forEach(btn => {
+      const onclick = btn.getAttribute('onclick') || '';
+      const match = onclick.match(/setFilter\('([^']+)'\)/);
+      const cat = btn.dataset.cat || (match && match[1]);
+      if(cat){
+        btn.dataset.cat = cat;
+        btn.classList.toggle('active', cat === filter);
+      }
+    });
+  }
+
+  function renderFeaturedStable(){
+    const grid = $('featuredGrid');
+    if(!grid) return;
+    const ids = [6,12,21,36].filter(id => productById(id));
+    const list = ids.length ? ids.map(productById).filter(Boolean) : produtos.slice(0,4);
+    grid.innerHTML = list.map(p => cardHtml(p,true,false)).join('');
+  }
+
+  function renderFavoritesStable(){
+    const grid = $('favoritesGrid');
+    if(!grid) return;
+    let ids = [];
+    try{ ids = JSON.parse(localStorage.getItem('prosa_favorites_v2') || localStorage.getItem('prosa_favorites_v1') || '[]').map(Number); }catch(e){}
+    const list = ids.map(productById).filter(Boolean);
+    grid.innerHTML = list.length ? list.map(p => cardHtml(p,false,false)).join('') : '<div class="smart-empty">Toque no coração de um produto para salvar seus favoritos aqui.</div>';
+  }
+
+  function renderAllStable(){
+    renderFeaturedStable();
+    renderMenuStable();
+    renderFavoritesStable();
+    renderRecentWithRemove();
+  }
+
+  window.setFilter = function(cat){
+    try{ filtroAtual = cat; }catch(e){}
+    renderMenuStable();
+  };
+  try{ setFilter = window.setFilter; }catch(e){}
+
+  const originalProductConfig = (typeof productConfig === 'function') ? productConfig : null;
+  window.productConfig = function(p){
+    const custom = customForProduct(p);
+    if(custom){
+      if(custom.fixedNote) return { variations:[], addons:[], fixedNote:custom };
+      return { variations:[{ id:custom.variationId, label:custom.label, required:true, placeholder:custom.placeholder, options:custom.options }], addons:[] };
+    }
+    return originalProductConfig ? originalProductConfig(p) : {variations:[],addons:[]};
+  };
+  try{ productConfig = window.productConfig; }catch(e){}
+
+  window.renderDrawerOptions = function(){
+    if(typeof drawerProduct === 'undefined' || !drawerProduct) return;
+    const config = window.productConfig(drawerProduct);
+    const box = $('drawerOptions');
+    if(!box) return;
+
+    if(config.fixedNote){
+      selectedVariations = { sabor:'Escolhido no estabelecimento.' };
+      selectedAddons = [];
+      box.innerHTML = `<div class="drawer-note"><strong>Sabor:</strong><br>Escolhido no estabelecimento.</div>`;
+      return;
+    }
+
+    const variationHtml = (config.variations || []).map(group => `
+      <div class="option-group" data-group="${group.id}">
+        <div class="option-title"><span>${group.label}</span>${group.required ? '<span class="required-mark">Obrigatório</span>' : ''}</div>
+        <select class="custom-required-select" ${group.required ? 'required' : ''} onchange="setVariation('${group.id}', this.value)">
+          <option value="" selected disabled>${group.placeholder || 'Selecione uma opção'}</option>
+          ${group.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+        </select>
+      </div>`).join('');
+
+    const addonHtml = (config.addons || []).length ? `<div class="option-group"><div class="option-title"><span>Adicionais pagos</span><span>Opcional</span></div><div class="choice-list">${config.addons.map(add => `<label class="choice"><span><input type="checkbox" value="${add.id}" onchange="toggleAddon('${add.id}')"> ${add.label}</span><small>+ ${money(add.price)}</small></label>`).join('')}</div></div>` : '';
+    box.innerHTML = variationHtml + addonHtml;
+  };
+  try{ renderDrawerOptions = window.renderDrawerOptions; }catch(e){}
+
+  window.validateDrawerSelection = function(){
+    if(typeof drawerProduct === 'undefined' || !drawerProduct) return false;
+    const custom = customForProduct(drawerProduct);
+    if(custom && custom.fixedNote){
+      selectedVariations = { sabor:'Escolhido no estabelecimento.' };
+      return true;
+    }
+    const config = window.productConfig(drawerProduct);
+    const missing = (config.variations || []).find(group => group.required && !selectedVariations[group.id]);
+    if(missing){
+      const select = document.querySelector(`#drawerOptions [data-group="${missing.id}"] select`);
+      if(select) select.focus();
+      if(typeof showToast === 'function') showToast(`⚠️ ${missing.placeholder || 'Escolha uma opção.'}`);
+      return false;
+    }
+    return true;
+  };
+  try{ validateDrawerSelection = window.validateDrawerSelection; }catch(e){}
+
+  window.variationLines = function(item){
+    const lines = [];
+    const vars = item.variations || {};
+    Object.entries(vars).forEach(([key,value]) => {
+      if(!value) return;
+      const product = productById(item.id) || item;
+      const custom = customForProduct(product);
+      if(custom && custom.fixedNote){
+        lines.push('Sabor: Escolhido no estabelecimento.');
+      }else{
+        const label = custom ? custom.label : key.charAt(0).toUpperCase()+key.slice(1);
+        lines.push(`${label}: ${value}`);
+      }
+    });
+    return [...new Set(lines)];
+  };
+  try{ variationLines = window.variationLines; }catch(e){}
+
+  window.itemMetaHtml = function(item){
+    const lines = [
+      ...window.variationLines(item),
+      ...((item.addons || []).map(add => `Adicional: ${add.label} (+ ${money(add.price)})`)),
+      item.prepTime ? `Preparo estimado: ${item.prepTime} min` : ''
+    ].filter(Boolean);
+    return lines.length ? `<div class="cart-meta">${lines.map(l => `<div>${l}</div>`).join('')}</div>` : '';
+  };
+  try{ itemMetaHtml = window.itemMetaHtml; }catch(e){}
+
+  function keyOf(item){
+    try{ return cartKey(item); }
+    catch(e){ return `${item.id}__${JSON.stringify(item.variations || {})}__${(item.addons || []).map(a => a.id).join('|')}`; }
+  }
+
+  window.renderCart = function(){
+    if(typeof carrinho === 'undefined') return;
+    const count = carrinho.reduce((s,p)=>s+Number(p.qtd || 0),0);
+    const total = carrinho.reduce((s,p)=>s+Number(p.unitPrice || basePrice(p))*Number(p.qtd || 0),0);
+    if($('cartBadge')) $('cartBadge').textContent = count;
+    if($('cartTotal')) $('cartTotal').textContent = money(total);
+    if($('mobileCartText')) $('mobileCartText').textContent = count ? `${count} item${count>1?'s':''} no carrinho` : 'Carrinho vazio';
+    if($('mobileCartSub')) $('mobileCartSub').textContent = count ? money(total) : 'Escolha seus produtos';
+    const cartItems = $('cartItems');
+    if(!cartItems) return;
+    if(!carrinho.length){
+      cartItems.innerHTML = `<div class="cart-empty"><div>☕</div><h3>Seu carrinho está vazio</h3><p>Toque em um produto para ver detalhes, escolher variações e adicionar ao carrinho.</p></div>`;
+      return;
+    }
+    cartItems.innerHTML = carrinho.map(p => {
+      const key = keyOf(p).replace(/'/g,'&#39;');
+      return `<div class="cart-item">
+        <img src="${p.img}" alt="${p.nome}">
+        <div><h4>${p.nome}</h4><small>${money(p.unitPrice || basePrice(p))} cada</small>${window.itemMetaHtml(p)}</div>
+        <div class="qty"><button onclick="diminuir('${key}')" aria-label="Diminuir">−</button><span>${p.qtd}</span><button onclick="aumentar('${key}')" aria-label="Aumentar">+</button></div>
+        <button class="remove" onclick="remover('${key}')" aria-label="Remover">×</button>
+      </div>`;
+    }).join('');
+  };
+  try{ renderCart = window.renderCart; }catch(e){}
+
+  window.finalizarPedido = function(){
+    if(typeof carrinho === 'undefined' || !carrinho.length){ if(typeof showToast === 'function') showToast('⚠️ Seu carrinho está vazio'); return; }
+    const fulfillment = $('fulfillmentMethod')?.value || '';
+    const addr = ($('addressInput')?.value || '').trim();
+    const payment = $('paymentMethod')?.value || '';
+    const notes = ($('orderNotes')?.value || '').trim();
+    if(!fulfillment){ $('fulfillmentMethod')?.focus(); if(typeof showToast === 'function') showToast('⚠️ Selecione como deseja receber o pedido.'); return; }
+    if(fulfillment === 'Entrega' && !addr){ $('addressInput')?.focus(); if(typeof showToast === 'function') showToast('⚠️ Preencha o endereço de entrega.'); return; }
+    if(!payment){ $('paymentMethod')?.focus(); if(typeof showToast === 'function') showToast('⚠️ Selecione a forma de pagamento.'); return; }
+
+    const itens = carrinho.map(p => {
+      const detalhes = window.variationLines(p);
+      const detalhesTxt = detalhes.length ? `\n  ${detalhes.join('\n  ')}` : '';
+      const prep = p.prepTime ? `\n  Preparo estimado: ${p.prepTime} min` : '';
+      return `• ${p.qtd} × ${p.nome} — ${money((p.unitPrice || basePrice(p)) * p.qtd)}${detalhesTxt}${prep}`;
+    }).join('\n');
+    const recebimento = fulfillment === 'Entrega' ? `Entrega\n\nEndereço para entrega:\n${addr}` : 'Retirada no Local';
+    const obs = notes ? `\n\nObservações:\n${notes}` : '';
+    const msg = `Olá Regiane! 👋\n\nGostaria de fazer o seguinte pedido:\n\n${itens}\n\nForma de receber:\n${recebimento}\n\nForma de pagamento:\n${payment}${obs}\n\nObrigado!`;
+    window.open(`https://wa.me/5515999999999?text=${encodeURIComponent(msg)}`,'_blank','noopener');
+    try{ if(typeof showConfirmation === 'function') showConfirmation(); }catch(e){}
+  };
+  try{ finalizarPedido = window.finalizarPedido; }catch(e){}
+
+  document.addEventListener('click', function(ev){
+    const removeRecent = ev.target.closest('[data-remove-recent]');
+    if(removeRecent){
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      removeRecentItem(removeRecent.dataset.removeRecent);
+      return;
+    }
+    const filter = ev.target.closest('#filters .filter');
+    if(filter){
+      ev.preventDefault();
+      const cat = filter.dataset.cat || ((filter.getAttribute('onclick') || '').match(/setFilter\('([^']+)'\)/) || [])[1] || 'todos';
+      window.setFilter(cat);
+      return;
+    }
+  }, true);
+
+  const search = $('searchInput');
+  if(search) search.addEventListener('input', renderMenuStable);
+
+  setTimeout(function(){
+    renderAllStable();
+    try{ window.renderCart(); }catch(e){}
+  }, 80);
+})();
+</script>
+
+
+<style>
+/* ===== Ajustes solicitados: logos maiores, histórico removível e WhatsApp sem preço individual ===== */
+.logo{
+  width:clamp(118px,10vw,170px)!important;
+  height:clamp(118px,10vw,170px)!important;
+  object-fit:contain!important;
+  aspect-ratio:1/1;
+}
+.footer-logo{
+  width:clamp(180px,16vw,250px)!important;
+  height:clamp(180px,16vw,250px)!important;
+  object-fit:contain!important;
+  aspect-ratio:1/1;
+}
+.recent-remove-btn{
+  display:grid!important;
+  place-items:center!important;
+  position:absolute!important;
+  top:12px!important;
+  right:12px!important;
+  width:38px!important;
+  height:38px!important;
+  border-radius:50%!important;
+  background:rgba(255,255,255,.98)!important;
+  border:1px solid var(--line)!important;
+  box-shadow:0 8px 22px rgba(44,26,14,.16)!important;
+  color:var(--danger)!important;
+  z-index:9!important;
+  font-size:1.15rem!important;
+  font-weight:900!important;
+  line-height:1!important;
+  -webkit-tap-highlight-color:transparent;
+}
+.recent-remove-btn:hover,
+.recent-remove-btn:focus-visible{
+  transform:scale(1.08);
+  background:#fff!important;
+  outline:none;
+}
+@media(max-width:760px){
+  .header{min-height:96px!important;height:auto!important;padding-top:6px!important;padding-bottom:6px!important}
+  :root{--header:96px!important}
+  .brand{flex:1;justify-content:flex-start;min-width:0}
+  .logo{
+    width:clamp(112px,34vw,150px)!important;
+    height:clamp(112px,34vw,150px)!important;
+    max-width:none!important;
+    max-height:none!important;
+  }
+  .footer-logo{
+    width:clamp(160px,48vw,220px)!important;
+    height:clamp(160px,48vw,220px)!important;
+  }
+  .mobile-panel{inset:var(--header) 0 auto 0!important}
+  .recent-remove-btn{width:40px!important;height:40px!important;top:10px!important;right:10px!important}
+}
+@media(max-width:390px){
+  .logo{width:118px!important;height:118px!important}
+  .cart-btn{padding:9px 11px!important}
+  .mobile-menu-btn{width:42px!important;height:42px!important}
+}
+@supports (-webkit-touch-callout:none){
+  .logo,.footer-logo{transform:translateZ(0);backface-visibility:hidden}
+}
+</style>
+<script>
+/* ===== Patch solicitado: histórico com exclusão individual e mensagem WhatsApp somente com total ===== */
+(function(){
+  const $ = (id)=>document.getElementById(id);
+  const money = (v)=>Number(v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+  const produtos = (typeof PRODUTOS !== 'undefined') ? PRODUTOS : [];
+  const recentKeys = ['prosa_recent_v2','prosa_recent_v1'];
+
+  function readRecentList(){
+    for(const key of recentKeys){
+      try{
+        const list = JSON.parse(localStorage.getItem(key) || '[]').map(Number).filter(Boolean);
+        if(list.length) return list;
+      }catch(e){}
+    }
+    return [];
+  }
+  function writeRecentList(list){
+    recentKeys.forEach(key=>localStorage.setItem(key, JSON.stringify(list)));
+  }
+  function getProduct(id){ return produtos.find(p=>Number(p.id)===Number(id)); }
+  function categoryName(cat){
+    try{ const c = CATS.find(x=>x[0]===cat); return c ? c[1] : (cat || 'Produto'); }
+    catch(e){ return cat || 'Produto'; }
+  }
+  function effectivePrice(p){
+    if(!p) return 0;
+    if(p.promo){
+      return p.promo.type === 'percent' ? +(Number(p.preco||0) * (1 - Number(p.promo.value||0) / 100)).toFixed(2) : Number(p.promo.value||0);
+    }
+    return Number(p.preco || 0);
+  }
+  function historyCard(p){
+    return `<article class="card" data-id="${p.id}" role="button" tabindex="0" aria-label="Abrir ${p.nome}">
+      <button class="recent-remove-btn" type="button" data-remove-recent="${p.id}" aria-label="Excluir ${p.nome} do histórico">×</button>
+      <button class="fav-btn" type="button" data-fav-id="${p.id}" aria-label="Favoritar">♡</button>
+      <div class="card-img-wrap"><img src="${p.img}" alt="${p.nome}" loading="lazy"><span class="card-badge">${categoryName(p.cat)}</span></div>
+      <div class="card-body"><h3 class="card-title">${p.nome}</h3><p class="ingredients">${p.ingredientes || p.desc || ''}</p><p class="nutrition">${typeof nutriTexto === 'function' ? nutriTexto(p) : ''}</p><div class="card-footer"><span class="price">${money(effectivePrice(p))}</span><span class="prep-time">⏱ ${p.prepTime || 10} min</span><button class="quick-add" type="button" data-open-id="${p.id}" aria-label="Abrir ${p.nome}">+</button></div></div>
+    </article>`;
+  }
+  window.renderRecentWithDelete = function(){
+    const grid = $('recentGrid');
+    if(!grid) return;
+    const items = readRecentList().map(getProduct).filter(Boolean);
+    grid.innerHTML = items.length ? items.map(historyCard).join('') : '<div class="smart-empty">Abra um produto para ele aparecer em “Você viu recentemente”.</div>';
+  };
+  window.removeHistoryItem = function(id){
+    const updated = readRecentList().filter(itemId=>Number(itemId)!==Number(id));
+    writeRecentList(updated);
+    window.renderRecentWithDelete();
+    if(typeof showToast === 'function') showToast('× Item removido do histórico');
+  };
+
+  document.addEventListener('click', function(event){
+    const btn = event.target.closest('[data-remove-recent]');
+    if(!btn) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    window.removeHistoryItem(btn.getAttribute('data-remove-recent'));
+  }, true);
+
+  function itemOptionLines(item){
+    const lines = [];
+    try{ if(typeof variationLines === 'function') lines.push(...variationLines(item)); }catch(e){}
+    (item.addons || []).forEach(add=>{
+      if(add && add.label) lines.push(`Adicional: ${add.label}`);
+    });
+    return [...new Set(lines.filter(Boolean))];
+  }
+
+  window.finalizarPedido = function(){
+    if(typeof carrinho === 'undefined' || !carrinho.length){
+      if(typeof showToast === 'function') showToast('⚠️ Seu carrinho está vazio');
+      return;
+    }
+    const fulfillment = $('fulfillmentMethod')?.value || '';
+    const addr = ($('addressInput')?.value || '').trim();
+    const payment = $('paymentMethod')?.value || '';
+    const notes = ($('orderNotes')?.value || '').trim();
+    if(!fulfillment){ $('fulfillmentMethod')?.focus(); if(typeof showToast === 'function') showToast('⚠️ Selecione como deseja receber o pedido.'); return; }
+    if(fulfillment === 'Entrega' && !addr){ $('addressInput')?.focus(); if(typeof showToast === 'function') showToast('⚠️ Preencha o endereço de entrega.'); return; }
+    if(!payment){ $('paymentMethod')?.focus(); if(typeof showToast === 'function') showToast('⚠️ Selecione a forma de pagamento.'); return; }
+
+    const total = carrinho.reduce((sum,item)=>sum + Number(item.unitPrice || effectivePrice(item)) * Number(item.qtd || 0), 0);
+    const itens = carrinho.map(item=>{
+      const details = itemOptionLines(item);
+      return `• ${item.qtd} × ${item.nome}${details.length ? `\n  ${details.join('\n  ')}` : ''}`;
+    }).join('\n');
+    const recebimento = fulfillment === 'Entrega' ? `Entrega\n\nEndereço:\n${addr}` : 'Retirada no Local';
+    const obs = notes ? `\n\nObservações:\n${notes}` : '';
+    const msg = `Olá Regiane! 👋\n\nGostaria de fazer o seguinte pedido:\n\n${itens}\n\nForma de pagamento:\n${payment}\n\nForma de receber:\n${recebimento}${obs}\n\nTotal do Pedido:\n${money(total)}\n\nObrigado!`;
+    window.open(`https://wa.me/5515999999999?text=${encodeURIComponent(msg)}`,'_blank','noopener');
+    try{ if(typeof showConfirmation === 'function') showConfirmation(); }catch(e){}
+  };
+  try{ finalizarPedido = window.finalizarPedido; }catch(e){}
+
+  setTimeout(function(){
+    window.renderRecentWithDelete();
+  }, 120);
+})();
+</script>
+
+
+<script>
+/* ===== Correção final: excluir do histórico sem abrir/registrar o produto novamente ===== */
+(function(){
+  const RECENT_KEYS_FIX = ['prosa_recent_v2','prosa_recent_v1'];
+  function readHistoryFix(){
+    for(const key of RECENT_KEYS_FIX){
+      try{
+        const list = JSON.parse(localStorage.getItem(key) || '[]').map(Number).filter(Boolean);
+        if(list.length) return list;
+      }catch(e){}
+    }
+    return [];
+  }
+  function writeHistoryFix(list){
+    RECENT_KEYS_FIX.forEach(key => localStorage.setItem(key, JSON.stringify(list)));
+  }
+  document.addEventListener('click', function(ev){
+    const btn = ev.target.closest && ev.target.closest('[data-remove-recent]');
+    if(!btn) return;
+
+    ev.preventDefault();
+    ev.stopPropagation();
+    ev.stopImmediatePropagation();
+
+    const id = Number(btn.getAttribute('data-remove-recent'));
+    const updated = readHistoryFix().filter(itemId => Number(itemId) !== id);
+    writeHistoryFix(updated);
+
+    const card = btn.closest('.card');
+    if(card) card.remove();
+
+    const grid = document.getElementById('recentGrid');
+    if(grid && !grid.querySelector('.card')){
+      grid.innerHTML = '<div class="smart-empty">Abra um produto para ele aparecer em “Você viu recentemente”.</div>';
+    }
+
+    if(typeof showToast === 'function') showToast('Item removido do histórico');
+  }, true);
+})();
+</script>
+
+
+<script>
+/* ===== Correção definitiva: manter botão X no histórico após visualizar item ===== */
+(function(){
+  const RECENT_KEYS_KEEP_X = ['prosa_recent_v2','prosa_recent_v1'];
+  const $keepX = (id) => document.getElementById(id);
+
+  function moneyKeepX(v){
+    return Number(v || 0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+  }
+  function productsKeepX(){
+    return Array.isArray(window.PRODUTOS) ? window.PRODUTOS : (typeof PRODUTOS !== 'undefined' ? PRODUTOS : []);
+  }
+  function productKeepX(id){
+    return productsKeepX().find(p => Number(p.id) === Number(id));
+  }
+  function readKeepX(){
+    for(const key of RECENT_KEYS_KEEP_X){
+      try{
+        const list = JSON.parse(localStorage.getItem(key) || '[]').map(Number).filter(Boolean);
+        if(list.length) return list;
+      }catch(e){}
+    }
+    return [];
+  }
+  function writeKeepX(list){
+    RECENT_KEYS_KEEP_X.forEach(key => localStorage.setItem(key, JSON.stringify(list)));
+    try{ window.vistosRecentemente = list.slice(); }catch(e){}
+    try{ window.recentesFinal = list.slice(); }catch(e){}
+  }
+  function catKeepX(cat){
+    try{
+      const c = (typeof CATS !== 'undefined' ? CATS : []).find(x => x[0] === cat);
+      return c ? c[1] : (cat || 'Produto');
+    }catch(e){ return cat || 'Produto'; }
+  }
+  function priceKeepX(p){
+    if(!p) return 0;
+    if(p.promo){
+      return p.promo.type === 'percent'
+        ? +(Number(p.preco || 0) * (1 - Number(p.promo.value || 0) / 100)).toFixed(2)
+        : Number(p.promo.value || 0);
+    }
+    return Number(p.preco || 0);
+  }
+  function nutritionKeepX(p){
+    try{ return typeof nutriTexto === 'function' ? nutriTexto(p) : ''; }
+    catch(e){ return ''; }
+  }
+  function historyCardKeepX(p){
+    return `<article class="card recent-history-card" data-id="${p.id}" role="button" tabindex="0" aria-label="Abrir ${p.nome}">
+      <button class="recent-remove-btn" type="button" data-remove-recent="${p.id}" aria-label="Excluir ${p.nome} do histórico">×</button>
+      <button class="fav-btn" type="button" data-fav-id="${p.id}" aria-label="Favoritar">♡</button>
+      <div class="card-img-wrap"><img src="${p.img}" alt="${p.nome}" loading="lazy"><span class="card-badge">${catKeepX(p.cat)}</span></div>
+      <div class="card-body"><h3 class="card-title">${p.nome}</h3><p class="ingredients">${p.ingredientes || p.desc || ''}</p><p class="nutrition">${nutritionKeepX(p)}</p><div class="card-footer"><span class="price">${moneyKeepX(priceKeepX(p))}</span><span class="prep-time">⏱ ${p.prepTime || 10} min</span><button class="quick-add" type="button" data-open-id="${p.id}" aria-label="Abrir ${p.nome}">+</button></div></div>
+    </article>`;
+  }
+
+  function renderKeepX(){
+    const grid = $keepX('recentGrid');
+    if(!grid) return;
+    const items = readKeepX().map(productKeepX).filter(Boolean);
+    grid.innerHTML = items.length
+      ? items.map(historyCardKeepX).join('')
+      : '<div class="smart-empty">Abra um produto para ele aparecer em “Você viu recentemente”.</div>';
+  }
+
+  window.renderRecentWithDelete = renderKeepX;
+  window.renderRecentWithRemove = renderKeepX;
+  window.renderRecentFinal = renderKeepX;
+  window.renderRecent = renderKeepX;
+
+  window.removeHistoryItem = function(id){
+    const updated = readKeepX().filter(itemId => Number(itemId) !== Number(id));
+    writeKeepX(updated);
+    renderKeepX();
+    if(typeof showToast === 'function') showToast('Item removido do histórico');
+  };
+
+  window.saveRecentlyViewed = function(id){
+    id = Number(id);
+    if(!id) return;
+    const updated = [id, ...readKeepX().filter(itemId => Number(itemId) !== id)].slice(0,10);
+    writeKeepX(updated);
+    renderKeepX();
+  };
+
+  const previousOpenDrawer = window.openDrawer;
+  if(typeof previousOpenDrawer === 'function' && !previousOpenDrawer.__keepXWrapped){
+    const wrappedOpenDrawer = function(id){
+      previousOpenDrawer(id);
+      window.saveRecentlyViewed(id);
+      setTimeout(renderKeepX, 0);
+    };
+    wrappedOpenDrawer.__keepXWrapped = true;
+    window.openDrawer = wrappedOpenDrawer;
+    try{ openDrawer = wrappedOpenDrawer; }catch(e){}
+  }
+
+  document.addEventListener('click', function(ev){
+    const removeBtn = ev.target.closest && ev.target.closest('[data-remove-recent]');
+    if(removeBtn){
+      ev.preventDefault();
+      ev.stopPropagation();
+      ev.stopImmediatePropagation();
+      window.removeHistoryItem(removeBtn.getAttribute('data-remove-recent'));
+      return;
+    }
+
+    const openBtn = ev.target.closest && ev.target.closest('[data-open-id]');
+    if(openBtn){
+      ev.preventDefault();
+      ev.stopPropagation();
+      ev.stopImmediatePropagation();
+      window.openDrawer(Number(openBtn.getAttribute('data-open-id')));
+      setTimeout(renderKeepX, 0);
+      return;
+    }
+
+    if(ev.target.closest && ev.target.closest('#recentGrid .fav-btn')){
+      setTimeout(renderKeepX, 0);
+      return;
+    }
+
+    const card = ev.target.closest && ev.target.closest('#recentGrid .card[data-id]');
+    if(card){
+      ev.preventDefault();
+      ev.stopPropagation();
+      ev.stopImmediatePropagation();
+      window.openDrawer(Number(card.getAttribute('data-id')));
+      setTimeout(renderKeepX, 0);
+    }
+  }, true);
+
+  document.addEventListener('keydown', function(ev){
+    const card = ev.target.closest && ev.target.closest('#recentGrid .card[data-id]');
+    if(!card || ev.key !== 'Enter') return;
+    ev.preventDefault();
+    window.openDrawer(Number(card.getAttribute('data-id')));
+    setTimeout(renderKeepX, 0);
+  }, true);
+
+  renderKeepX();
 })();
 </script>
 
